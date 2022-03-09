@@ -1,4 +1,4 @@
-# Converting between types
+# Go from the beginning - converting between types
 
 There's different data types and a need to convert between them. For example, we often need to convert between text and numbers for presentational and other reasons. We also need to convert between numbers and decimals without loosing information in the process. 
 
@@ -192,3 +192,7 @@ str := strconv.Itoa(noOfPlayers)
 ## Additional parsing
 
 The `strconv` library is what you want if you start with a string and you want to convert to and from another format. Learn more about [strconv library here](https://pkg.go.dev/strconv)
+
+## Summary
+
+TODO

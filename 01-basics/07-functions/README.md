@@ -1,6 +1,6 @@
 # Functions
 
-So far, you've seen the function `main`, define like so:
+So far, you've seen the function `main()`, define like so:
 
 ```go
 func main(){

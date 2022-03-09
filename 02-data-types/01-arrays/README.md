@@ -2,14 +2,14 @@
 
 ## Arrays
 
-an array is group of elements that are connected. 
+An array is group of elements that are connected. You want to use an array when you have a group of something, like many orders, cars, rows in a file. The idea is to collect all that data in one structure. You also want to be able to iterate over it and possibly carry out an operation on it as a group. 
 
 ### Declare an array
 
-To declare an array, you need to specify:
+To declare an array, you need to specify the following properties:
 
-- **capacity**, how many elements it holds
-- **type**, what type of elements it holds
+- **capacity**, how many elements it holds.
+- **type**, what type of elements it holds.
 - **array content**, you can assign it elements at creation or do so later.
 
 Here's the syntax:
@@ -18,13 +18,15 @@ Here's the syntax:
 [<capacity>]<type>{...element}
 ```
 
+It starts with the square brackets, `[]`. Within the square brackets you set the capacity, how many elements it can hold.
+
 and here's a more real example:
 
 ```go
 cities := [5]string{"NY", "LA"}
 ```
 
-In the preceding code, an array of strings is declared. It has capacity for 5 elements and two of the places are filled with "NY" and "LA".
+In the preceding code, an array of strings is declared. It has capacity for 5 elements and two of the places are filled with "NY" and "LA". Note also because we set the capacity to 5 and the number of elements it's assigned is 2, there's 3 spaces free.
 
 ### Capacity by inference
 
@@ -38,7 +40,7 @@ The preceding code has 4 elements, and that's also its capacity.
 
 ### Accessing elements
 
-The way to access an element is by using it's index. Index is 0 based. 
+The way to access an element is by using it's index. Index is 0 based, meaning the first index is 0 and its last is the length -1. 
 
 ```go
 ids := [...]int{1, 2, 3, 4}

@@ -1,4 +1,4 @@
-# Boolean logic
+# Go from the beginning - applying boolean logic
 
 > This article will cover working with boolean logic. You will learn how to work with boolean data, `if`, `else if` and `else` constructs.
 
