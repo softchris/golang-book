@@ -1,6 +1,18 @@
-# Go from the beginning - applying boolean logic
+# Go from the beginning - flow control
 
-> This article will cover working with boolean logic. You will learn how to work with boolean data, `if`, `else if` and `else` constructs.
+##  Pre-Lecture Quiz
+
+TODO
+
+## Introduction
+
+This chapter will cover:
+
+- Working with boolean logic.
+- Create boolean data.
+- Use constructs like `if`, `else if` and `else`.
+
+## Flow control
 
 Using boolean logic in your program is about creating different execution paths through your code?
 
@@ -14,9 +26,10 @@ Sure, consider this code:
 
 ```go
 printMessage := true
- if printMessage {
+
+if printMessage {
   fmt.Println("Message")
- }
+}
 ```
 
 If `printMessage` is `true`, the string "Message" will print. If the value is `false`, nothing will print.
@@ -47,7 +60,7 @@ if accountBalance + accountCredit > 0 {
 
 The program above does the job, meaning it correctly evaluates whether you have money to spend. However, you might want to print something out if the condition is not met, for that you have `else`.
 
-### introducing `else`
+### Introducing `else`
 
 You would like to improve the preceding code. The `else` clause is run when `if` is evaluated to false. Here's how you can add it to the program:
 
@@ -118,7 +131,7 @@ Your expression can examine more than one variable or condition. There are boole
 
    Above, the expression will evaluate to true, thanks to the negation with `!`.
 
-## Exercise - create a program that tests your boolean logic
+## Assignment - create a program that tests your boolean logic
 
 1. Create a file *main.go* and give it the following content:
 
@@ -184,9 +197,16 @@ Your expression can examine more than one variable or condition. There are boole
     No sandwiches, then I will starve, I only eat sandwiches
    ```
 
-1. Try playing around with the code, how does the output change if you change `testScore` value to 51, 62 03 90?
-1. Challenge: a test score probably shouldn't be negative, how can you add a check for that?
-  
-## Summary
+1. Try playing around with the code, how does the output change if you change `testScore` value to 51, 62, 3 or 90?
 
-In this article, you were taught about `if`, `else if` and `else` and the use of boolean expressions. Depending on the value of your data, the code executes differently.
+## 🚀 Challenge
+
+A test score probably shouldn't be negative, how can you add a check for that?
+
+## Post-Lecture Quiz
+
+TODO Post-lecture quiz
+
+## Review & Self Study
+
+Have a look at this [official tutorial on flow control](https://go.dev/tour/flowcontrol/6) using a Go sandbox

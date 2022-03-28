@@ -1,8 +1,8 @@
-# Go modules
+# Go from the beginning - Go modules
 
 There are two interesting use cases with modules:
 
-- **Consuming a module**, you will most likely use a combination oof core moodules and external 3rd party modules
+- **Consuming a module**, you will most likely use a combination oof core modules and external 3rd party modules
 - **Creating a module**, in some case you will create code that you or someone else will be able to use. For this scenario, you can create a module and upload it to GitHub.
 
 ## Consume internal files
@@ -361,5 +361,7 @@ To publish your package, you can put it on GitHub.
    ```output
    [LOG] hey there
    ```
+
+## Summary
 
 Great, you've managed to create a module locally, put it on GitHub and have one of your other Go projects use it.

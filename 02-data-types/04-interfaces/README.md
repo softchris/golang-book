@@ -1,5 +1,7 @@
 # Go from the beginning - interfaces
 
+To describe what an interface is, lets start by talking about structs and how they are different from an interface.
+
 With structs, we can define properties we want a concept to have, like for example a car:
 
 ```go

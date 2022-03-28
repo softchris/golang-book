@@ -1,12 +1,27 @@
 # Go from the beginning - converting between types
 
-There's different data types and a need to convert between them. For example, we often need to convert between text and numbers for presentational and other reasons. We also need to convert between numbers and decimals without loosing information in the process. 
+This article covers how to convert between strings and numbers.
+
+##  Pre-Lecture Quiz
+
+TODO
+
+## Introduction
+
+This chapter will cover:
+
+- Introduce uses cases where data conversion make sense
+- Showcase how to use `strconv` library.
+
+## Why convert between types
+
+There's different data types and a need to convert between them. For example, we often need to convert between text and numbers for presentational and other reasons. We also need to convert between numbers and decimals without losing information in the process.
 
 The main package for dealing with conversions in Go is `strconv`.
 
 ## Use case - command line arguments
 
-To use command line arguments in a program, you need the `os` package.  
+Let's show a common case where you start off with strings and you need to make it into numbers, command line arguments. To use command line arguments in a program, you need the `os` package.  
 
 `os.Args` points to an array representing your command line arguments. To access a specific argument, you would use the index operator `[]` like so:
 
@@ -58,7 +73,7 @@ What type is `arg` in our code above? There are some ways to find out:
 
 ### Addressing the problem with `strconv`
 
-Ok, so we know what type something is, what if we need to use these command line arguments, that are string and feed them into lets say a calculator program? 
+Ok, so we know what type something is, what if we need to use these command line arguments, which are string and feed them into let's say a calculator program?
 
 Consider the below code, that at present WOULDN'T compile:
 
@@ -181,11 +196,11 @@ func main() {
 
 ## Integer to string
 
-You might be dealing with the opposite, you have an integer and you want it to be a string. In this case, you can use the `Itoa()` function, integer to ascii. Here's an example:
+You might be dealing with the opposite; you have an integer, and you want it to be a string. In this case, you can use the `Itoa()` function, integer to ascii. Here's an example:
 
 ```go
 var noOfPlayers = 8
-str := strconv.Itoa(noOfPlayers)
+str, _ := strconv.Itoa(noOfPlayers)
 
 ```
 
@@ -193,6 +208,12 @@ str := strconv.Itoa(noOfPlayers)
 
 The `strconv` library is what you want if you start with a string and you want to convert to and from another format. Learn more about [strconv library here](https://pkg.go.dev/strconv)
 
-## Summary
+## 🚀 Challenge
 
 TODO
+
+##  Pre-Lecture Quiz
+
+TODO
+
+

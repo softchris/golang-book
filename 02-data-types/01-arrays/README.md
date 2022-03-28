@@ -1,10 +1,8 @@
-# Arrays and slices
+# Go from the beginning - arrays and slices
 
-## Arrays
+An array is group of elements that are connected. You want to use an array when you have a group of something, like many orders, cars, rows in a file. The idea is to collect all that data in one structure. You also want to be able to iterate over it and possibly carry out an operation on it as a group.
 
-An array is group of elements that are connected. You want to use an array when you have a group of something, like many orders, cars, rows in a file. The idea is to collect all that data in one structure. You also want to be able to iterate over it and possibly carry out an operation on it as a group. 
-
-### Declare an array
+## Declare an array
 
 To declare an array, you need to specify the following properties:
 
@@ -38,7 +36,7 @@ ids := [...]int{1, 2, 3, 4}
 
 The preceding code has 4 elements, and that's also its capacity.
 
-### Accessing elements
+## Accessing elements
 
 The way to access an element is by using it's index. Index is 0 based, meaning the first index is 0 and its last is the length -1. 
 
@@ -48,7 +46,7 @@ ids[0] // 1
 ids[3] // 4
 ```
 
-### length and capacity
+## Length and capacity
 
 Imagine we have the following array declared:
 
@@ -139,5 +137,11 @@ dest := make([]int, 5)
 copy(dest, arr[0:2]) // copies slice {1,2} into dest
 fmt.Println(dest) // [1 2 0 0 0]
 ```
+
+## Summary
+
+In summary, you were taught how to use Arrays. Additionally, we covered working with slices. Slices allows you to work with an array like structure and change its size as you see fit.
+
+### Learn more
 
 <https://docs.microsoft.com/en-us/learn/modules/go-data-types/2-slices>

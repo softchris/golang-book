@@ -1,0 +1,13 @@
+2022/03/11 15:03:59 starting program
+2022/03/11 15:03:59 can't divide by 0 goroutine 1 [running]:
+runtime/debug.Stack(0xc000111d30, 0x10b1b40, 0x10eae78)
+	/usr/local/Cellar/go/1.16/libexec/src/runtime/debug/stack.go:24 +0x9f
+main.errorHandler()
+	/Users/chnoring/Documents/dev/projects/go-projects/book/01-basics/08-error-handling/panic.go:14 +0x5b
+panic(0x10b1b40, 0x10eae78)
+	/usr/local/Cellar/go/1.16/libexec/src/runtime/panic.go:965 +0x1b9
+main.Divide(0xa, 0x0, 0x0)
+	/Users/chnoring/Documents/dev/projects/go-projects/book/01-basics/08-error-handling/panic.go:21 +0xa5
+main.main()
+	/Users/chnoring/Documents/dev/projects/go-projects/book/01-basics/08-error-handling/panic.go:34 +0x115
+

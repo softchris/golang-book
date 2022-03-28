@@ -1,8 +1,17 @@
 # Go from the beginning - using variables
-
-> In this second part, we cover the usage of variables in Go, how to create them, give them different types and values.
-
 With variables, we can remember values and later refer to them via named references. using variables will make our code easier to read.
+
+##  Pre-Lecture Quiz
+
+TODO
+
+## Introduction
+
+In this lesson we'll cover:
+
+- The usage of variables in Go.
+- How to create them.
+- Assign different types and values.
 
 ## Declare variables
 
@@ -64,47 +73,6 @@ There's two ways you can declare a variable and give it a type:
 
    In the preceding code, the data type is inferred by the value you give it. In this case, the data type becomes `string` based on the value "chris".
 
-## Exercise - define some variables and print them out
-
-In this exercise, you will define some variable you might need for the card game Texas Holdem.
-
-1. Create a file *main.go* and give it the following content:
-
-    ```go
-    package main
-    
-    import "fmt"
-    
-    var (
-      players = 3
-      replay = false
-      namePlayerOne = "chris" 
-      PI = 3.14
-    )
-    
-    func main () {
-      fmt.Println(players)
-      fmt.Println(replay)
-      fmt.Println(namePlayerOne)
-      fmt.Println(PI)
-    }
-    ```
-
-1. Run `go run main.go` in the terminal:
-
-   ```go
-   go run main.go
-   ``` 
-
-   You should see the following output:
-
-   ```output
-    3
-    false
-    chris
-    3.14
-   ```
-
 ## String interpolation
 
 Sometimes, you want to be able to write things to the screen and mix different data types doing so. For example, you might want to write, "Customer: Adam has 20$ on his bank account".
@@ -136,6 +104,93 @@ Customer Adam has 20$ on their bank account
 
 In this exercise, you've learned how to declare your first variables. You've also learned that there's different types for different types of data. Finally you've learned too interpolate variables of different types and have that be printed to the screen.
 
-### Learn more
+## Assignment - define some variables and print them out
 
-<https://docs.microsoft.com/en-us/learn/modules/go-variables-functions-packages/2-data-types>
+In this exercise, you will define some variable you might need for the card game Texas Holdem.
+
+1. Create a file *main.go* and give it the following content:
+
+    ```go
+    package main
+    
+    import "fmt"
+    
+    func main () {
+    }
+    ```
+
+1. Add the following variables after the import section:
+
+   ```go
+   var (
+     players = 3
+     replay = false
+     namePlayerOne = "chris"
+   )
+   ```
+
+   Now you have:
+
+   - `players`, to represent the number of players in the game.
+   - `replay`, a boolean stating whether to start a new game session when the old one has ended.
+   - `namePlayerOne`, a string representing the name of the first player.
+
+   All of these variables helps describe important information in a Texas Holdem game.
+
+   Next, lets run our app to make sure it works.
+
+1. Add the following code to the `main()` function to print out the variables:
+
+   ```go
+   fmt.Println(players)
+   fmt.Println(replay)
+   fmt.Println(namePlayerOne)
+   ```
+
+1. Run `go run main.go` in the terminal:
+
+   ```go
+   go run main.go
+   ```
+
+   You should see the following output:
+
+   ```output
+    3
+    false
+    chris
+   ```
+
+   Great, you now have a starting point for an app you can keep building on.
+
+## 🚀 Challenge
+
+See if you can come up with more variables to represent state in a Texas Holdem card game, like for example, other players, the card deck etc. What data type would you give those variables?
+
+## Post-Lecture Quiz
+
+TODO Post-lecture quiz
+
+## Review & Self Study
+
+Have a look at this [official tutorial on variables](https://go.dev/tour/basics/8) using a Go sandbox
+
+## Solution
+
+```go
+package main
+
+import "fmt"
+
+var (
+  players = 3
+  replay = false
+  namePlayerOne = "chris" 
+)
+
+func main () {
+  fmt.Println(players)
+  fmt.Println(replay)
+  fmt.Println(namePlayerOne)
+}
+```

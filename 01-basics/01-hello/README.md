@@ -1,6 +1,21 @@
 # Go for beginners - your first program
 
-> this is the first part of series on Go, the programming language, I hope it's helpful
+This lesson covers some history on Go and also teaches you hot to build your first Go app.
+
+## Pre-Lecture Quiz
+
+TODO
+
+## Introduction
+
+In this lesson we'll cover:
+
+- The history of Go
+- Why use Go for your apps
+- The anatomy of a Go app
+- Authoring and running your first app
+
+## A history of Go 
 
 The language is called Go but is sometimes known as Golang as the first website for it was golang.org.
 
@@ -107,9 +122,17 @@ Congrats, you've created your first Go application.
 
 In this article, you learned about the programming language Go, some features it has and how to write your first program.
 
-## Learn more
+## 🚀 Challenge
 
-There's many great resources out there for learning the Go programming language like:
+Compare Go to other programming languages, can you list some differences between them?
+
+## Post-Lecture Quiz
+
+TODO Post-lecture quiz
+
+## Review & Self Study
+
+Select one of the resources below and try do a tutorial.
 
 - <https://go.dev/>
 - <https://www.tutorialspoint.com/go/index.htm>
@@ -118,3 +141,20 @@ There's many great resources out there for learning the Go programming language 
 - <https://docs.microsoft.com/en-us/learn/modules/go-get-started/>
 - <https://docs.microsoft.com/en-us/learn/modules/serverless-go/>
 
+## Assignment
+
+Create a file *main.go*. Use the `fmt` library to print out to the console. Remember that your run programs with `go run <my program>.go`.
+
+## Solution
+
+Create a file *main.go*
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  fmt.Println("printing to the console")
+}
+```

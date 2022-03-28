@@ -15,6 +15,16 @@ type Person struct {
 	address Address
 }
 
+func (a *Address) setAddress(copy Address) {
+	a.city = copy.city
+	a.street = copy.street
+	a.postal = copy.postal
+}
+
+func (a Address) string() string {
+	return fmt.Sprintf("City: %s, Street: %s, Postal address: %s", a.city, a.street, a.postal)
+}
+
 // embedded with same name
 type Employee struct {
 	Address
@@ -27,10 +37,14 @@ func main() {
 	address.street = "Buckingham palace"
 	address.postal = "SW1"
 	fmt.Println(address.city)
+	fmt.Println(address.string())
 
 	address2 := Address{"New York", "Central park", "111"}
 	address3 := Address{city: "LA", street: "Hollywood Boulevard", postal: "123"}
 
+	fmt.Println(address2.city)
+
+	address2.setAddress(address3)
 	fmt.Println(address2.city)
 	fmt.Println(address3.city)
 
@@ -48,5 +62,7 @@ func main() {
 		},
 		company: "Microsoft",
 	}
+
+	// employee.company = "test"
 	fmt.Println(employee.company)
 }

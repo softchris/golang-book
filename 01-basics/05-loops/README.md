@@ -1,8 +1,23 @@
 # Go from the beginning - working with loops
 
-> TLDR; this article covers working with loops in Go
+This article covers working with loops in Go
 
-You are likely to want repeat a set of instructions. For example, you might have a list of orders where you need to process each order. Or you have a file where you need to read it line by line or there might be some other calculation. Regardless of your situation, you are likely to need a looping construct, so what are your options in Go?
+##  Pre-Lecture Quiz
+
+TODO
+
+## Introduction
+
+This chapter will cover:
+
+- Loop statements with `for`.
+- Device conditions on when to break a loop.
+- Apply `range` to iterate over an array.
+- Control the loop with `continue` and `break`. 
+
+## The case for looping statements
+
+You are likely to want repeat a set of instructions. For example, you might have a list of orders where you need to process each order. Or you have a file that you need to read it line by line or there might be some other calculation. Regardless of your situation, you are likely to need a looping construct, so what are your options in Go?
 
 Basically, you are using the `for` loop. There are three major ways yu can use it:
 
@@ -160,4 +175,78 @@ So far, you've seen three ways you can use the `for` construct. There are also w
    3
    ```
 
-## Summary
+## Assignment - create a command line loop
+
+When creating console apps, you often want to read user input. The user input could be data used in the program or it can be the user typing a command to do something like "save", "print", "backup" etc. We will build a program for the latter case.
+
+1. Create a file *main.go* and give it the following content:
+
+   ```go
+   package main
+
+   import "fmt"
+
+   func main() {
+   
+   }
+   ```
+
+1. Add the following code to the `main()` method:
+
+   ```go
+   var keepGoing = true
+   answer := ""
+   for keepGoing {
+     fmt.Println("Type command: ")
+     fmt.Scan(&answer)
+     if answer == "quit" {
+       keepGoing = false
+     }
+   }
+   fmt.Println("program exit")
+   ```
+
+1. Run the code by typing `go run main.go`:
+
+   ```bash
+   go run main.go
+   ```
+
+   You should see an output like so:
+
+   ```output
+   Type command: command
+   Type command: quit
+   program exit 
+   ``` 
+
+## 🚀 Challenge
+
+- Add a command "print" that ends up outputting "printing file".
+
+- See if you can use a `break` instead of the variable `keepGoing` to break the loop when the user types"quit".
+
+## Solution
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  var keepGoing = true
+   answer := ""
+   for keepGoing {
+     fmt.Println("Type command: ")
+     fmt.Scan(&answer)
+     if answer == "quit" {
+       keepGoing = false
+     }
+   }
+   fmt.Println("program exit")
+}
+```
+
+## Post-Lecture Quiz
+
+TODO

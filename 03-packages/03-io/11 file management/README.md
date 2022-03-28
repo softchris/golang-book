@@ -4,10 +4,10 @@ You will use a combination of the libraries `os`, `io`, `io/ioutil` to work with
 
 Working with these libraries implies you are interested in doing the following:
 
-- Read and write to files
-- Create, delete, and copy files and directories
-- Compress files and directories
-- Work with various file formats like JSON, CSV and XML
+- Read and write to files.
+- Create, delete, and copy files and directories.
+- Compress files and directories.
+- Work with various file formats like JSON, CSV and XML.
 
 ## Read and write to files
 
@@ -63,13 +63,53 @@ First the file is created calling `Create()`. From that, we get a file handle `f
 
 ### Append to a file
 
-TODO
+Appending text, implies you already have an existing file. When you append, you information to the end of the file. Appending is something you are likely to do when you add new entries to a log file or adding a new purchase to a Point of Sale, POS system in a grocery store for example.
 
-### Inspect file
+To append to a file you use the `OpenFile()` method in the `os` lib. What you need to do is to pass it some flags that states that you want to append content. You should also have a behavior that says, create if it doesn't already exist. You end up with code looking like so:
 
-TODO
+```go
+f, err := os.OpenFile("text.log",
+ os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+if err != nil {
+ log.Println(err)
+}
+defer f.Close()
+```
+
+The 0644, is a 3x3 bit flag. It sets permissing for User (6, Read/Write), Group (4, Read), and Other (4, Read).
+
+To append a string, you can call `WriteString()` like so:
+
+```go
+f.WriteString("my text \n")
+```
+
+### File information
+
+You might want to look at a specific file and find out various details about it. Things that can be interesting are:
+
+- **Name**, maybe youu started from a path looking at a list of file. Getting the filename can be valuable.
+- **Size**. Getting the size of disc can be good to know.
+- **Permission**. To know what permissions you have tells you want you are able to do with the file, like running it, writing to it and so on.
+- **Last modified**. You might have a query looking for newly updated files only. Inspecting the modified date is what you want.
+- **Is a directory**. Files and directories are ultimately just files. There's a flag distinguishing a file from a directory.
+
+To get file information, use the `Stat()` function like so:
+
+```go
+fileStat, err := os.Stat(path)
+fmt.Println("File Name:", fileStat.Name())        // Base name of the file
+fmt.Println("Size:", fileStat.Size())             // Length in bytes for regular files
+fmt.Println("Permissions:", fileStat.Mode())      // File mode bits
+fmt.Println("Last Modified:", fileStat.ModTime()) // Last modification time
+fmt.Println("Is Directory: ", fileStat.IsDir())   // Abbreviation for Mode().IsDir()
+```
 
 ## Perform operations on files and directories
+
+TODO, copy, rename, remove, check for existence
+
+## Compress files and directories
 
 TODO
 
