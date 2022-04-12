@@ -1,5 +1,21 @@
 # Go from the beginning - Structs
 
+In this chapter, we will learn about structs. A struct is a complex data type capable of holding many fields. It can also be extended to hold behavior.
+
+##  Pre-Lecture Quiz
+
+TODO
+
+## Introduction
+
+This chapter will cover:
+
+- Declaring and inspecting a struct.
+- Embedding a struct within another struct.
+- Adding implementations to structs.
+
+## Why structs
+
 Lets start with a simple scenario, you have an account balance. You might store it in a variable like so:
 
 ```go
@@ -35,10 +51,6 @@ type Account struct {
   id int
 }
 ```
-
-## References
-
-<https://www.golangprograms.com/go-language/struct.html>
 
 ## Defining a struct
 
@@ -151,6 +163,108 @@ We would get the following output, when calling `string()`:
 City: London, Street: Buckingham palace, Postal address: SW1
 ```
 
-## Summary
+## Assignment - defining a struct
 
-In this article, you've learned why you should group fields into a struct when you have many properties that describes something complex. Hopefully you will use structs for these cases.
+Define a struct representing a row in shopping basket for an e-commerce store. 
+
+Here's example output data:
+
+```output
+Title, Description, Quantity, Price per unit, Total
+LEGO set, 4000 pieces, 1, 600GBP, 600GBP 
+```
+
+### Write a program representing the shopping basket
+
+Write a program that iterates over the shopping basked and calculates the total:
+
+```output
+Title, Description, Quantity, Price per unit, Total
+LEGO set, 4000 pieces, 1, 600GBP, 600GBP
+Plushy, plush toy, 3, 5 GBP, 15GBP 
+
+Total: 615 GBP
+```
+
+## Solution
+
+Part I
+
+```go
+package main
+
+import (
+ "fmt"
+)
+
+type Row struct {
+ Title       string
+ Description string
+ Quantity    int
+ UnitPrice   float32
+}
+
+func main() {
+ row := Row{
+  Title:       "LEGO set",
+  Description: "4000 pieces",
+  Quantity:    1,
+  UnitPrice:   600,
+ }
+ fmt.Println(row)
+}
+```
+
+Part II
+
+```go
+package main
+
+import (
+ "fmt"
+)
+
+type Row struct {
+ Title       string
+ Description string
+ Quantity    int
+ UnitPrice   float32
+}
+
+func main() {
+ row := Row{
+  Title:       "LEGO set",
+  Description: "4000 pieces",
+  Quantity:    1,
+  UnitPrice:   600,
+ }
+ row2 := Row{
+  Title:       "Plushy",
+  Description: "plush toy",
+  Quantity:    3,
+  UnitPrice:   5,
+ }
+
+ basket := make([]Row, 0)
+ basket = append(basket, row)
+ basket = append(basket, row2)
+
+ var sum int = 0
+ for i := 0; i < len(basket); i++ {
+  current := basket[i]
+  fmt.Println(current)
+  sum += current.Quantity * int(current.UnitPrice)
+ }
+ fmt.Println("Total", sum)
+}
+
+```
+
+## Challenge
+
+TODO
+
+##  Pre-Lecture Quiz
+
+TODO
+

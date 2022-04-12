@@ -10,17 +10,17 @@ func main() {
 	// 	fmt.Println(i)
 	// }
 
-	// // while
-	// var keepGoing = true
-	// answer := ""
-	// for keepGoing {
-	// 	fmt.Println("Type command: ")
-	// 	fmt.Scan(&answer)
-	// 	if answer == "quit" {
-	// 		keepGoing = false
-	// 	}
-	// }
-	// fmt.Println("program exit")
+	// while
+	var keepGoing = true
+	answer := ""
+	for keepGoing {
+		fmt.Println("Type command: ")
+		fmt.Scan(&answer)
+		if answer == "quit" {
+			keepGoing = false
+		}
+	}
+	fmt.Println("program exit")
 
 	// for each
 	arr := []string{"arg1", "arg2", "arg3"}

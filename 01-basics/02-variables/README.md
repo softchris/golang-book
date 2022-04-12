@@ -106,9 +106,13 @@ In this exercise, you've learned how to declare your first variables. You've als
 
 ## Assignment - define some variables and print them out
 
-In this exercise, you will define some variable you might need for the card game Texas Holdem.
+Define some variables you might need for the card game Texas Holdem and print them out.
 
-1. Create a file *main.go* and give it the following content:
+TODO
+
+## Solution
+
+Create a file *main.go* and give it the following content:
 
     ```go
     package main

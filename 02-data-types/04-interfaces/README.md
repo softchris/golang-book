@@ -1,5 +1,23 @@
 # Go from the beginning - interfaces
 
+This chapter covers what an interface and what too use it for.
+
+##  Pre-Lecture Quiz
+
+TODO
+
+## Introduction
+
+This chapter will cover:
+
+- What an interface and how it differs from a struct
+- How to add behavior
+- Implement an interface
+- Type assertions
+- Changing a value
+
+## Interface
+
 To describe what an interface is, lets start by talking about structs and how they are different from an interface.
 
 With structs, we can define properties we want a concept to have, like for example a car:
@@ -265,6 +283,110 @@ func (c *Car) run() {
 
 and your code now does what it's supposed to.
 
-## Summary
+## Assignment
 
-In this article, you learned how to work with interfaces, how to implement them and when you should use them.
+Start with the following code:
+
+```go
+package main 
+
+type Point struct {
+ x float32
+ y float32
+}
+
+type Vehicle struct {
+ velocity float32
+ Point
+}
+
+func main() {
+ v := Vehicle{
+  velocity: 0,
+  Point: Point{
+   x: 0,
+   y: 0,
+  },
+ }
+ v.fly()
+ fmt.Println(v.velocity)
+ v.land()
+ fmt.Println(v.velocity)
+}
+```
+
+Implement the following interface:
+
+```go
+type Spaceship interface {
+ fly()
+ land()
+ position() Point
+}
+```
+
+The output from running the program should be:
+
+```output
+10
+0
+```
+
+## Solution
+
+```go
+package main
+
+import "fmt"
+
+type Point struct {
+ x float32
+ y float32
+}
+
+type Vehicle struct {
+ velocity float32
+ Point
+}
+
+type Spaceship interface {
+ fly()
+ land()
+ position() Point
+}
+
+func (v *Vehicle) fly() {
+ v.velocity = 10
+}
+
+func (v *Vehicle) land() {
+ v.velocity = 0
+}
+
+func (v Vehicle) position() Point {
+ return v.Point
+}
+
+func main() {
+ v := Vehicle{
+  velocity: 0,
+  Point: Point{
+   x: 0,
+   y: 0,
+  },
+ }
+ v.fly()
+ fmt.Println(v.velocity)
+ v.land()
+ fmt.Println(v.velocity)
+}
+
+```
+
+## Challenge
+
+TODO
+
+## Post-Lecture Quiz
+
+TODO

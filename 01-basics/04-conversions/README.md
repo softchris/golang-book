@@ -208,6 +208,10 @@ str, _ := strconv.Itoa(noOfPlayers)
 
 The `strconv` library is what you want if you start with a string and you want to convert to and from another format. Learn more about [strconv library here](https://pkg.go.dev/strconv)
 
+## Assignment
+
+## Solution
+
 ## 🚀 Challenge
 
 TODO

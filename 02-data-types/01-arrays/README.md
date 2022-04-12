@@ -1,6 +1,24 @@
 # Go from the beginning - arrays and slices
 
-An array is group of elements that are connected. You want to use an array when you have a group of something, like many orders, cars, rows in a file. The idea is to collect all that data in one structure. You also want to be able to iterate over it and possibly carry out an operation on it as a group.
+In this chapter, we will cover arrays and slices
+
+##  Pre-Lecture Quiz
+
+TODO
+
+## Introduction
+
+This chapter will cover:
+
+- Declaring and inspecting an array.
+- Accessing elements in the array.
+- Working with slices.
+
+## Arrays
+
+An array is group of elements that are connected. You want to use an array when you have a group of something, like many orders, cars, rows in a file.
+
+The idea with an Array, is to collect all that data in one structure. You also want to be able to iterate over it and possibly carry out an operation on it as a group.
 
 ## Declare an array
 
@@ -138,10 +156,102 @@ copy(dest, arr[0:2]) // copies slice {1,2} into dest
 fmt.Println(dest) // [1 2 0 0 0]
 ```
 
-## Summary
+## Assignment - create an array
 
-In summary, you were taught how to use Arrays. Additionally, we covered working with slices. Slices allows you to work with an array like structure and change its size as you see fit.
+Create an array meant for log entries. It can be used in the following way:
 
-### Learn more
+```console
+command> new
+here's a new entry
+command> new
+here's another entry
+command> list
+here's a new entry
+here's another entry
+command> quit
+bye
+```
 
-<https://docs.microsoft.com/en-us/learn/modules/go-data-types/2-slices>
+So you need to have a way to store multiple strings and list them when asked for.
+
+Here's some starter code to deal with console input:
+
+```go
+package main
+
+import (
+ "fmt"
+)
+
+func main() {
+ // create array
+
+ var response string
+ for {
+  fmt.Print("command> ")
+  fmt.Scan(&response)
+  if response == "quit" {
+   break
+  } else if response == "new" {
+   fmt.Print("Entry:")
+   fmt.Scan(&response)
+   // save entry to list
+   fmt.Println("Saving entry")
+  } else if response == "list" {
+   // list entries
+   fmt.Println("Listing entries")
+  } else {
+   fmt.Println("Unknown command", response)
+  }
+
+ }
+ fmt.Println("bye")
+}
+```
+
+Add your own code where the comments are
+
+## Solution
+
+```go
+package main
+
+import (
+ "fmt"
+)
+
+func main() {
+ // create array
+ arr := make([]string, 0)
+
+ var response string
+ for {
+  fmt.Print("command> ")
+  fmt.Scan(&response)
+  if response == "quit" {
+   break
+  } else if response == "new" {
+   fmt.Print("Entry:")
+   fmt.Scan(&response)
+
+   // save entry to list
+   arr = append(arr, response)   
+   fmt.Println("Saving entry")
+  } else if response == "list" {
+   // list entries
+   fmt.Println("Listing entries")
+   for i := 0; i < len(arr); i++ {
+    fmt.Println(arr[i])
+   }
+  } else {
+   fmt.Println("Unknown command", response)
+  }
+
+ }
+ fmt.Println("bye")
+}
+```
+
+##  Pre-Lecture Quiz
+
+TODO

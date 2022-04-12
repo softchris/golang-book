@@ -109,7 +109,7 @@ func main() {
 					CHECK - Read dir
 					CHECK Create dir
 					CHECK Copy file
-					CHECK Move file
+				  Move file
 					CHECK Get file metadata
 					CHECK Delete file
 					zip, compress files

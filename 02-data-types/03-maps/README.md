@@ -1,5 +1,21 @@
 # Go from the beginning - using maps
 
+A map is a complex data structure that enables you to store things in a key-value fashion. This lets you implement scenarios like phone books, translation dictionaries and more.
+
+##  Pre-Lecture Quiz
+
+TODO
+
+## Introduction
+
+This chapter will cover:
+
+- Defining a map.
+- Reading the values of map by key but also iterating over it.
+- Change the content of a map.
+
+## The use case for a map
+
 You will have scenarios when you code that there are things you need to look up. If you use a dictionary for example you might look up how you can translate a word from English to Spanish or vice versa. In programming, you have similar situations, maybe you want to know what service is run on a certain port for example. There's also databases that's based around the concept of having a unique key that points to a certain value.
 
 How all this is implemented is via map structure. The idea is that you define a key and value and collect all those in a group, a map.
@@ -85,6 +101,18 @@ To remove an entry from a map, you can use the `delete()` method. The `delete()`
 delete(phonebook, 555404)
 ```
 
-## Summary
+## Assignment
 
-We've learned what a map is and when to use it. Additionally we've also learned how to create it, add values to it and read from it, both key by key and also iterating over the whole map.
+TODO
+
+## Solution
+
+TODO
+
+## Challenge
+
+TODO
+
+## Post-Lecture Quiz
+
+TODO

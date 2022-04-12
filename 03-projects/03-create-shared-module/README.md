@@ -1,152 +1,3 @@
-# Go from the beginning - Go modules
-
-There are two interesting use cases with modules:
-
-- **Consuming a module**, you will most likely use a combination oof core modules and external 3rd party modules
-- **Creating a module**, in some case you will create code that you or someone else will be able to use. For this scenario, you can create a module and upload it to GitHub.
-
-## Consume internal files
-
-You might want to split up your app in many different files. Let's say you have the following files:
-
-```output
-/app
-  main.go
-  /helper
-    helper.go 
-```
-
-1. Create the module like so:
-
-    ```go
-    go mod init
-    ```
-
-1. create the **helper** directory and *helper.go* file and give it the following content:
-
-    ```go
-    // helper.go
-    
-    package helper
-    
-    import "fmt"
-    
-    func Help() {
-     fmt.Println("This is a helper function")
-    }
-    ```
-
-1. Create the *main.go* file and give it the following content:
-
-   ```go
-   package main
-
-   import (
-     "log-tester/helper"
-    
-     "github.com/softchris/logger"
-   )
-    
-   func main() {
-     logger.Log("hey there")
-     helper.Help()
-   }
-   ```
-
-   Note this import `"log-tester/helper"`, it ensures the `helper` package is in scope.
-
-1. Compile and run
-
-   ```bash
-   go run main.go
-   ```
-
-## Consume an external module
-
-To consume an external module, you need to:
-
-- **Import it**, this involves using the `import` instruction and fully qualifying the address to the module's location.
-- **Use it in code**, call the code from the module that you mean to use
-- **Ensure it's downloaded**, so your code can be run.
-
-### Create a project
-
-Let's create a new project
-
-1. Run `go mod init`:
-
-    ```go
-    go mod init hello
-    ```
-
-    Note how *go.mod* was created with the following content:
-
-    ```go
-    module hello
-    
-    go 1.16
-    ```
-
-### Add reference to an external lib
-
-Next, lets create some code that will use the external library:
-
-1. Create the file *main.go*
-
-    ```go
-    package main
-    
-    import (
-      "fmt"
-      "github.com/softchris/math"
-    )
-    ```
-
-1. To the same file, add `main()` function and use external function, from package:
-
-    ```go
-    func main() {
-      sum += math.Add(1,2)
-      fmt.Println(sum)
-    }
-    ```
-
-## Fetch the lib
-
-Now, we need to resolve the external library. 
-
-1. Run `go mod tidy`:
-    
-    ```bash
-    go mod tidy
-    ```
-
-    Your *go.mod* is updated:
-
-    ```go
-    require github.com/softchris/math v0.2.0
-    ```
-
-    There's also *go.sum* file with the following content:
-
-    ```go
-    github.com/softchris/math v0.2.0 h1:88L6PLRBGygS3LY5KGIJhyw9IZturmd2ksU+p13OPa4=
-
-    github.com/softchris/math v0.2.0/go.mod h1:v8WzhjKC+ipuH+i9IZ0Ta2IArniTP53gc5TgCINCqAo=
-    ```
-
-    This is Go's way of keeping track of how to build the app by referencing to the go module in question.
-
-1. Run `go run`:
-
-   ```go
-   go run main.go
-   ```
-
-   ```output
-   3
-   ```
-
 ## Create a module
 
 When you build a module meant for sharing, there's some gotchas:
@@ -157,7 +8,7 @@ When you build a module meant for sharing, there's some gotchas:
 - you can't test it locally
 - upload your package to GitHub for wide distribution
 
-### Create the code for the module
+## Assignment - create a module meant for sharing and consume it
 
 To create a moodule meant for wider use you need to first initialize a module.
 
@@ -362,6 +213,10 @@ To publish your package, you can put it on GitHub.
    [LOG] hey there
    ```
 
-## Summary
+## Challenge
 
-Great, you've managed to create a module locally, put it on GitHub and have one of your other Go projects use it.
+TODO
+
+##  Post-Lecture Quiz
+
+TODO
