@@ -1,10 +1,6 @@
-# Go from the beginning - using maps
+# Using maps
 
 A map is a complex data structure that enables you to store things in a key-value fashion. This lets you implement scenarios like phone books, translation dictionaries and more.
-
-##  Pre-Lecture Quiz
-
-TODO
 
 ## Introduction
 
@@ -101,18 +97,86 @@ To remove an entry from a map, you can use the `delete()` method. The `delete()`
 delete(phonebook, 555404)
 ```
 
-## Assignment
+## Assignment - build a phone book
 
-TODO
+Here's your contacts:
+
+```output
+Alice 555-123 
+Bob 555-124
+Jean 555-125
+```
+
+```console
+Welcome to your phonebook.
+Command> store
+Enter contact: Rob 555-126
+Contact saved
+Command> list
+Alice 555-123 
+Bob 555-124
+Jean 555-125
+Rob 555-126
+Command> lookup
+Enter name: Alice
+Alice has number: 555-123
+```
+
+HINT: you might need to use both a map and a slice.
 
 ## Solution
 
-TODO
+```go
+package main
+
+import "fmt"
+
+func main() {
+ var command string
+ contacts := make(map[string]string)
+ fmt.Println("Welcome to your phonebook")
+
+ for {
+  fmt.Print("Command> ")
+  fmt.Scan(&command)
+  if command == "store" {
+   fmt.Print("Enter contact: ")
+   var contact string
+   var no string
+   fmt.Scan(&contact, &no)
+   contacts[contact] = no
+   fmt.Println("Contact saved")
+  } else if command == "list" {
+   for key, value := range contacts {
+    fmt.Println(key, value)
+   }
+  } else if command == "lookup" {
+   fmt.Print("Enter name: ")
+   var contact string
+   fmt.Scan(&contact)
+   fmt.Println(contacts[contact])
+  } else if command == "quit" {
+   break
+  } else {
+   fmt.Println("Unknown command: ", command)
+  }
+ }
+ fmt.Println("Bye")
+}
+
+```
+
 
 ## Challenge
 
-TODO
+Right now, there's no error checking. Add a check so that if you look up a contact that doesn't exist, you should get an error message. Here's how it could work:
 
-## Post-Lecture Quiz
+```console
+command> lookup
+Enter name: Jane
+Contact doesn't exist, do you want to add it? y/n: y
+Enter contact: Jane 123
+Contact saved
+```
 
-TODO
+

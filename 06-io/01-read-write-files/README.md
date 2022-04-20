@@ -72,3 +72,11 @@ To append a string, you can call `WriteString()` like so:
 ```go
 f.WriteString("my text \n")
 ```
+
+## Assignment
+
+TODO
+
+## Solution
+
+TODO

@@ -1,10 +1,6 @@
 # Go from the beginning - arrays and slices
 
-In this chapter, we will cover arrays and slices
-
-##  Pre-Lecture Quiz
-
-TODO
+In this chapter, we will cover arrays and slices.
 
 ## Introduction
 
@@ -252,6 +248,3 @@ func main() {
 }
 ```
 
-##  Pre-Lecture Quiz
-
-TODO

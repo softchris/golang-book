@@ -1,6 +1,22 @@
-Web APIs is ususally what we interact with to serve data to our services or to a client. 
+# Build a Web API
 
-## Web API
+Web APIs is usually what we interact with to serve data to our services or to a client. 
+
+##  Pre-Lecture Quiz
+
+TODO
+
+## Introduction
+
+In this chapter, you will learn the following:
+
+- What a WEb API is.
+- The `net/http` library.
+- Responding to a request.
+- Working with request data like router and query parameters but also the body.
+- Using ServeMux.
+
+## Web API
 
 Common responsibilities for a web services are to respond to requests:
 
@@ -370,4 +386,6 @@ func main() {
 - list details on the request such as the route, the verb used and the query parameters.
 - See if you can serve up different types of data like JSON or images.
 
+##  Post-Lecture Quiz
 
+TODO

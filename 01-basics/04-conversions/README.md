@@ -2,10 +2,6 @@
 
 This article covers how to convert between strings and numbers.
 
-##  Pre-Lecture Quiz
-
-TODO
-
 ## Introduction
 
 This chapter will cover:
@@ -210,14 +206,44 @@ The `strconv` library is what you want if you start with a string and you want t
 
 ## Assignment
 
+Create an app that adds two numbers together. The values should come from the command line. Here's how the program should run:
+
+```bash
+go run main.go 2 4
+6
+```
+
 ## Solution
+
+```go
+package main
+
+import (
+ "fmt"
+ "os"
+ "strconv"
+)
+
+func add(no int, secondNumber int) int {
+ return no + secondNumber
+}
+
+func main() {
+ no1, _ := strconv.Atoi(os.Args[1])
+ no2, _ := strconv.Atoi(os.Args[2])
+ var sum = add(no1, no2)
+ fmt.Println(sum)
+}
+```
 
 ## 🚀 Challenge
 
-TODO
+What happens if run the program like so? 
 
-##  Pre-Lecture Quiz
+```bash
+go run main.go one two
+```
 
-TODO
+Handle any conversion error and call `panic()` if there's a conversion error.
 
 

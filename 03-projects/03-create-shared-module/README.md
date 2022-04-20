@@ -1,3 +1,20 @@
+# Create a module meant for sharing
+
+TODO
+
+##  Pre-Lecture Quiz
+
+TODO
+
+## Introduction
+
+This chapter will cover:
+
+- Creating a project.
+- Testing the module locally.
+- Tag the module with different versions.
+- Try consuming the module as an external library.
+
 ## Create a module
 
 When you build a module meant for sharing, there's some gotchas:

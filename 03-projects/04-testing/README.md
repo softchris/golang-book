@@ -1,4 +1,22 @@
-## Why we test
+# Test your code in Go
+
+TODO
+
+##  Pre-Lecture Quiz
+
+TODO
+
+## Introduction
+
+This chapter will cover:
+
+- Why we test our code
+- The testing library in Go
+- Authoring and running a test
+- Controlling how to run your tests
+- Produce coverage reports
+
+## Why we test
 
 It's good to test your code to ensure it works as intended. In this chapter we're looking at unit tests specifically. 
 
@@ -169,3 +187,7 @@ The coverage report tells us that the the green portions are covered by tests wh
 ## Learn more 
 
 There's a lot more to learn on testing with Go, have a look at package documentation, [docs](https://pkg.go.dev/testing)
+
+##  Post-Lecture Quiz
+
+TODO

@@ -108,20 +108,16 @@ In this exercise, you've learned how to declare your first variables. You've als
 
 Define some variables you might need for the card game Texas Holdem and print them out.
 
-TODO
-
-## Solution
-
 Create a file *main.go* and give it the following content:
 
-    ```go
+   ```go
     package main
     
     import "fmt"
     
     func main () {
     }
-    ```
+   ```
 
 1. Add the following variables after the import section:
 

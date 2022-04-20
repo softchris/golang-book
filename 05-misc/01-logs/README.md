@@ -2,6 +2,17 @@
 
 Once you started writing code you realize quite early that you have a need to print things to the screen as well as sometimes to a file or even a log service. What you want to say is usually what type of logging you want to do.
 
+##  Pre-Lecture Quiz
+
+TODO
+
+## Introduction
+
+In this chapter, you will learn the following:
+
+- Why and what to log.
+- Using the `log` library.
+
 ## Reasons to log
 
 There are many reasons to log, here's some reasons:
@@ -315,6 +326,10 @@ func main() {
 
 ```
 
-## Summary
+## Challenge
 
-You've learned about the `log` library and how it can be used to clean up your code and make for a more uniform logging.
+TODO
+
+##  Post-Lecture Quiz
+
+TODO

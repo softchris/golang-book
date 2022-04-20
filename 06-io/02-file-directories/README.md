@@ -1,8 +1,8 @@
-## Perform operations on files and directories
+# Perform operations on files and directories
 
 Things you likely want to do to files and directories are moving them about, removing them, rename them etc. In short, high-level operations that is less about the content of the file but doing something with it.
 
-### File information
+## File information
 
 You might want to look at a specific file and find out various details about it. Things that can be interesting are:
 
@@ -23,7 +23,7 @@ fmt.Println("Last Modified:", fileStat.ModTime()) // Last modification time
 fmt.Println("Is Directory: ", fileStat.IsDir())   // Abbreviation for Mode().IsDir()
 ```
 
-### Copy file
+## Copy file
 
 Copying a file is really three operations:
 
@@ -56,7 +56,7 @@ if err != nil {
 }
 ```
 
-### Rename
+## Rename
 
 Rename is a bit easier to achieve. The `os` package has a `Rename()` function. Here's how to use it:
 
@@ -64,7 +64,7 @@ Rename is a bit easier to achieve. The `os` package has a `Rename()` function. H
 err := os.Rename(src, dest)
 ```
 
-### Remove file
+## Remove file
 
 To remove file, there's a `Remove()` function you can use. Here's how to use it:
 
@@ -72,7 +72,7 @@ To remove file, there's a `Remove()` function you can use. Here's how to use it:
 err := os.Remove(path)
 ```
 
-### Create dir
+## Create dir
 
 To create a directory, you can use the `MkdirAll()` function in the `os` library. However, you should check whether the directory exist first. The way to do that is to use the `IsNotExist()` function like so:
 
@@ -99,7 +99,7 @@ As you can see on the above code:
 
 1. Finally, we call `os.MkdirAll(dirName, 0755)`. The 755 instruction is about permissions on the created directory, which gives the permissions, Read/Write/Execute, Read/Execute, Read/Execute. 755 is a common permission set on web servers. You essentially want to avoid anyone but you to modify the file.
 
-### Read dir
+## Read dir
 
 Reading a directory is quite straight forward. You can use the `ReadDir()` function on the `io/ioutil` library. Here's how you would read a directory:
 
@@ -110,3 +110,8 @@ files, err := ioutil.ReadDir(path)
 `files` is an array of type `FileInfo`.  
 
 TODO, copy, rename, remove, check for existence
+
+## Assignment
+
+## Solution
+

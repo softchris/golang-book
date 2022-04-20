@@ -2,6 +2,18 @@
 
 In this chapter, we are looking at downloading and using external modules.
 
+##  Pre-Lecture Quiz
+
+TODO
+
+## Introduction
+
+This chapter will cover:
+
+- Creating a project
+- Adding an external module to your project
+- Use the external library in your app
+
 ## External module
 
 To consume an external module, you need to:
@@ -163,3 +175,11 @@ func main() {
   fmt.Println(sum)
 }
 ```
+
+## Challenge
+
+TODO
+
+##  Post-Lecture Quiz
+
+TODO

@@ -18,4 +18,6 @@ func main() {
 	no2, _ := strconv.Atoi(os.Args[2])
 	var sum = add(no1, no2)
 	fmt.Println(sum)
+	fmt.Printf("%T", os.Args[1])
+	fmt.Printf("%T", 1)
 }

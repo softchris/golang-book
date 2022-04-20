@@ -1,3 +1,19 @@
+# Documenting your code
+
+TODO
+
+##  Pre-Lecture Quiz
+
+TODO
+
+## Introduction
+
+This chapter will cover:
+
+- Setting up godoc tool.
+- Document your code.
+- Generate docs.
+
 ## Setup `godoc`
 
 `godoc` generates documentation for your package.
@@ -29,3 +45,19 @@
    on `http://localhost:6060` there are now docs. Find your package and you will see it has docs.
 
 1. Add comment as normal commented out comment, near the code
+
+## Assignment
+
+TODO
+
+## Solution
+
+TODO
+
+## Challenge
+
+TODO
+
+##  Post-Lecture Quiz
+
+TODO
