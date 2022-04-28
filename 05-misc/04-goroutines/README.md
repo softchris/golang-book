@@ -373,6 +373,8 @@ label:
 
 What's happening here is that we set up a for loop that runs forever, until closed. To ensure we break out of the for loop and not just the `select`, we add `label:`
 
+TODO, you can use range over the channel as well.
+
 ## Assignment - `SearchFiles()` with channels
 
 Let's take all our learning and add channels to the program we wrote containing a file searcher. 

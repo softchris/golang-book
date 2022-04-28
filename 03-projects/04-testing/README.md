@@ -191,3 +191,73 @@ There's a lot more to learn on testing with Go, have a look at package documenta
 ##  Post-Lecture Quiz
 
 TODO
+
+## Assignment
+
+Given the the following code:
+
+```go
+package arithmetic
+
+func Add(lhs int, rhs int) int {
+  return lhs + rhs
+}
+
+func Subtract(lhs int, rhs int) int {
+  return lhs - rhs
+}
+
+func Divide(lhs float32, rhs float32) float32 {
+  return lhs / rhs
+}
+
+func Multiply(lhs int, rhs int) {
+  return lhs * rhs
+}
+```
+
+Write a test module for above code and make sure the tests pass
+
+## Solution
+
+*arithmetic_test.go*
+
+```go
+package arithmetic
+
+import (
+ "testing"
+)
+
+func TestAdd(t *testing.T) {
+  total := Add(2, 2)
+  if total != 4 {
+    t.Errorf("Sum was incorrect, Actual: %d, Expected: %d", total, 4)
+  }
+  t.Log("running TestAdd")
+}
+
+func TestSubtract(t *testing.T) {
+  total := Subtract(2, 2)
+  if total !=0 {
+    t.Errorf("Sum was incorrect, Actual: %d, Expected: %d", total, 0)
+  }
+  t.Log("running TestSubtract")
+}
+
+func TestMultiply(t *testing.T) {
+  total := Multiply(2, 3)
+  if total != 6 {
+    t.Errorf("Sum was incorrect, Actual: %d, Expected: %d", total, 6)
+  }
+  t.Log("running TestMultiply")
+}
+
+func TestDivide(t *testing.T) {
+  total := Divide(float64(2), float64(2))
+  if total != 1 {
+    t.Errorf("Sum was incorrect, Actual: %d, Expected: %d", total, 1)
+  }
+  t.Log("running TestDivide")
+}
+```
