@@ -4,6 +4,15 @@ A goroutine is a lightweight thread managed by the Go runtime.
 
 Channels is how you communicate between routines.
 
+## Introduction
+
+In this chapter you will:
+
+- Understand the difference between concurrency and parallelism
+- Use Goroutines to run your functions
+- Create and use channels to communicate between your Goroutines
+- Apply Goroutines to an app that searches files for faster execution.
+
 ## Concurrency, what's the benefit
 
 Concurrency is the task of running and managing the multiple computations at the same time. While *parallelism* is the task of running multiple computations simultaneously.

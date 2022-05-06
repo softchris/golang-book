@@ -1,20 +1,18 @@
-# Go from the beginning - flow control
+# Flow control
 
-##  Pre-Lecture Quiz
-
-TODO
+In this chapter, we're looking to learn about constructs `if` and `else` to control the flow of your application.
 
 ## Introduction
 
 This chapter will cover:
 
-- Working with boolean logic.
-- Create boolean data.
+- Working with Boolean logic.
+- Create Boolean data.
 - Use constructs like `if`, `else if` and `else`.
 
-## Flow control
+## What is flow control
 
-Using boolean logic in your program is about creating different execution paths through your code?
+Using Boolean logic in your program is about creating different execution paths through your code?
 
 > What does that mean?
 
@@ -38,7 +36,7 @@ If `printMessage` is `true`, the string "Message" will print. If the value is `f
 
 ## The `if` construct
 
-You've seen an example already about code that runs or don't run depending on a value. The `if` construct is what makes that possible. An `if` take a boolean expression like so:
+You've seen an example already about code that runs or doesn't run depending on a value. The `if` construct is what makes that possible. An `if` take a Boolean expression like so:
 
 ```go
 if true {
@@ -46,9 +44,9 @@ if true {
 }
 ```
 
-### Using a boolean variable
+### Using a Boolean variable
 
-When you use a boolean value as part of your boolean expression, it needs to be evaluated. Here's code showing just that:
+When you use a Boolean value as part of your Boolean expression, it needs to be evaluated. Here's code showing just that:
 
 ```go
 accountBalance = 100
@@ -76,7 +74,7 @@ if accountBalance + accountCredit > 0 {
 
 ## Using `else if`
 
-`if` and `else` takes you far. Sometimes, it's not enough. You might need to grade a course in different levels depending on the points achieved on the exam. For this situation, you need an `else if` construct, a construct that will be evaluated if the `if` constructs evaluates to false. It differs from `else` in that it also takes an expression. Here's an example where it's used:
+`if` and `else` take you far. Sometimes, it's not enough. You might need to grade a course at different levels depending on the points achieved on the exam. For this situation, you need an `else if` construct, a construct that will be evaluated if the `if` construct evaluates to false. It differs from `else` in that it also takes an expression. Here's an example where it's used:
 
 ```go
 if testScore >= testScoreGrade5 {
@@ -92,7 +90,7 @@ if testScore >= testScoreGrade5 {
 
 ## Multiple expressions
 
-Your expression can examine more than one variable or condition. There are boolean operators you can use to help you. Here are some operators you are likely to encounter:
+Your expression can examine more than one variable or condition. There are Boolean operators you can use to help you. Here are some operators you are likely to encounter:
 
 - `&&`, evaluates to true if values on the left and right side are both true. Here's an example of this operator in use:
 
@@ -104,7 +102,7 @@ Your expression can examine more than one variable or condition. There are boole
      }
     ```
 
-    In the preceding code, the expression will evalute to true as both `hasGas` and `hasKeyInIgnition` is true.
+    In the preceding code, the expression will evaluate to true as both `hasGas` and `hasKeyInIgnition` is true.
 
 - `||` , evaluates to true if either left or right value is true. Here's an example of this operator in use:
 
@@ -119,7 +117,7 @@ Your expression can examine more than one variable or condition. There are boole
 
   In the preceding code, `hasBurger` is true and that's enough for this expression to become true.
 
-- `!`, also know as NOT, it will negate the expression. Here's an example:
+- `!`, also known as NOT, it will negate the expression. Here's an example:
 
    ```go
    hasSandwich := false
@@ -131,7 +129,9 @@ Your expression can examine more than one variable or condition. There are boole
 
    Above, the expression will evaluate to true, thanks to the negation with `!`.
 
-## Assignment - create a program that tests your boolean logic
+## Assignment - create a program that tests your Boolean logic
+
+In this assignment, you are creating a program that tests out various Boolean logic.
 
 1. Create a file *main.go* and give it the following content:
 
@@ -201,12 +201,57 @@ Your expression can examine more than one variable or condition. There are boole
 
 ## 🚀 Challenge
 
-A test score probably shouldn't be negative, how can you add a check for that?
+A test score shouldn't be negative, how can you add a check for that?
 
-## Post-Lecture Quiz
+## Solution
 
-TODO Post-lecture quiz
+```go
+package main
+
+import "fmt"
+
+func main() {
+ testScoreGrade5 := 80
+ testScoreGrade4 := 60
+ testScoreGrade3 := 50
+ testScore := 49
+
+ hasGas := true
+ hasKeyInIgnition := true
+
+ hasBurger := true
+ hasSandwich := false
+
+ printMessage := true
+ if printMessage {
+  fmt.Println("Message")
+ }
+
+ if testScore >= testScoreGrade5 {
+  fmt.Println("Top mark")
+ } else if testScore >= testScoreGrade4 {
+  fmt.Println("Pass with distinction")
+ } else if testScore >= testScoreGrade3 {
+  fmt.Println("Pass with distinction")
+ } else {
+  fmt.Println("Failed")
+ }
+
+ if hasGas && hasKeyInIgnition {
+  fmt.Println("Can drive car")
+ }
+
+ if hasBurger || hasSandwich {
+  fmt.Println("Can eat")
+ }
+
+ if !hasSandwich {
+  fmt.Println("No sandwiches, then I will starve, I only eat sandwiches")
+ }
+}
+
+```
 
 ## Review & Self Study
 
-Have a look at this [official tutorial on flow control](https://go.dev/tour/flowcontrol/6) using a Go sandbox
+Have a look at this [official tutorial on flow control](https://go.dev/tour/flowcontrol/6) using a Go sandbox.

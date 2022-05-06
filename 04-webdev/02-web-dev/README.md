@@ -1,39 +1,35 @@
 # Build a Web API
 
-Web APIs is usually what we interact with to serve data to our services or to a client. 
-
-##  Pre-Lecture Quiz
-
-TODO
+A Web API is usually what we interact with to serve data to our services or a client. Said client may either be web page or tool like curl. In this chapter, we will learn to build a Web API that will process requests via HTTP.
 
 ## Introduction
 
 In this chapter, you will learn the following:
 
-- What a WEb API is.
-- The `net/http` library.
+- What's a Web API.
+- The `net/http` library, and its capabilities at high-level.
 - Responding to a request.
 - Working with request data like router and query parameters but also the body.
-- Using ServeMux.
+- Using ServeMux, and why it may the preferred choice.
 
 ## Web API
 
-Common responsibilities for a web services are to respond to requests:
+Common responsibilities for web services are to respond to requests:
 
 - **asking for data** and serve data like JSON, XML images, CSS, HTML
-- **asking to modify a resource** either by creating, updating or deleting it.
+- **asking to modify a resource** either by creating, updating, or deleting it.
 
 ## The `net/http` library
 
 There's a library `net/http` that will help us build a web server. Building a web server with this library involves the following:
 
-- Create a server instance
-- Define route requests and how to respond to them
+- Create a server instance.
+- Define route requests and how to respond to them.
 - Start the server instance, making sure it's accessible on a certain address and port.
 
 ### Create a server instance
 
-In `net/http`,  `http` represents your service instance. 
+In `net/http`,  `http` represents your service instance.
 
 ```go
 import (
@@ -74,7 +70,7 @@ func hello(w http.ResponseWriter, req *http.Request) {
 }
 ```
 
-The expectation is that you inspect the `req` object, your request for any indata that decides what to return. Then you are to use `w` to produce a response. In this case you are returning a string by passing `w` to `Fprintf()`. `FPrintf()` takes a writer. The writer is anything IO, so it could be, be writing to file for example as well, or as in this case an HTTP response stream.
+The expectation is that you inspect the `req` object, your request for any data that decides what to return. Then you are to use `w` to produce a response. In this case, you are returning a string by passing `w` to `Fprintf()`. `FPrintf()` takes a writer. The writer is anything IO, so it could be, be writing to a file for example as well, or as in this case an HTTP response stream.
 
 ### Start the server
 
@@ -88,19 +84,19 @@ http.ListenAndServe(":8090", nil)
 
 ## Responding to a request
 
-An incoming request could be asking for a specific route like /products or /orders for example or it could be asking for a specific static file like an image, a text file or maybe CSS. The request itself gives us a hint, about not only the logical domain it wants data from, like orders or products, but what data type it wants or it might even present credentials for authentication. The hint is known as headers.
+An incoming request could be asking for a specific route like /products or /orders for example, or it could be asking for a specific static file like an image, a text file or maybe CSS. The request itself gives us a hint, about not only the logical domain it wants data from, like orders or products but what data type it wants, or it might even present credentials for authentication. The hint is known as headers.
 
 ### Header
 
-There's a concept called headers. A header is giving off a piece of information that could say what piece of content it is, how big the content is or it could be a token helping you authenticate for example.
+There's a concept called headers. A header is giving off a piece of information that could say what piece of content it is, how big the content is, or it could be a token helping you authenticate for example.
 
 Headers can exist both on the incoming request as well as the response.
 
-### Serving various types of content
+### Serving different types of content
 
-Serving different types of content means that we are working on the response. To serve various content type, we need to instruct the response what type of content it is so that a consuming client knows how to interpret it, (in some cases, clients like a web browser is able to figure that out anyway through a process called content sniffing).
+Serving different types of content means that we are working on the response. To serve various content type, we need to instruct the response on what type of content it is so that a consuming client knows how to interpret it, (in some cases, clients like a web browser can figure that out anyway through a process called content sniffing).
 
-To serve a specific type of content, there's two things you need to do:
+To serve a specific type of content, there are two things you need to do:
 
 - **set the content type**, you set the content type by calling:
 
@@ -108,9 +104,9 @@ To serve a specific type of content, there's two things you need to do:
    w.Header().Set("Content-Type", "image/jpeg")
    ```
 
-   Here the content type is an image of subtype jpeg. There's many content types you could be setting like plain text, CSS, JSON, XML and more. 
+   Here the content type is an image of subtype jpeg. There are many content types you could be setting like plain text, CSS, JSON, XML and more.
 
-- **produce the response**. Producing a response means writing to the response stream. That can be done by calling the `Write()` method on the `ResponseWriter` instance we are passed when we handle a route. There's other methods capable of writing to said stream as well.
+- **produce the response**. Producing a response means writing to the response stream. That can be done by calling the `Write()` method on the `ResponseWriter` instance we are passed when we handle a route. There are other methods capable of writing to said stream as well.
 
 ### Serving image data
 
@@ -132,7 +128,7 @@ func GetImage(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-- First we open the image:
+- First, we open the image:
 
    ```go
    f, _ := os.Open("/image.jpg")
@@ -159,7 +155,7 @@ func GetImage(w http.ResponseWriter, r *http.Request) {
 
 ### Serving JSON data
 
-Just like with serving images, we need to follow a similar approach of configuring the correct content type header and then construct the response. Here's the code:
+Just like with serving images, we need to follow a similar approach of configuring the correct content-type header and then constructing the response. Here's the code:
 
 ```go
 package main
@@ -190,7 +186,7 @@ func main() {
 ```
 
 - First, we set the content type, by setting the value "application/json":
- 
+
    ```go
    w.Header().Set("Content-Type", "application/json")
    ```
@@ -219,13 +215,13 @@ w.Write(data)
 
 ## Working with the request
 
-There's various ways except for headers to instruct the server program what to do:
+There are various ways, additionally to headers, to instruct the server program what to do:
 
-- **HTTP verb**, the HTTP verb expresses intention. The POST verb means to create a resource and the GET verb says to only read the data for example. There are many HTTP verbs that we will cover later in this chapter. These two below requests means different things:
+- **HTTP verb**, the HTTP verb expresses intention. The POST verb means to create a resource and the GET verb says to only read the data for example. There are many HTTP verbs that we will cover later in this chapter. These two below requests mean different things:
 
    ```text
-   GET /products # fetching a list of products
-   POST /products # creating a new product resource
+   GET /products # fetching a list of products
+   POST /products # creating a new product resource
    ```
 
 - **body**, The body can contain a payload, data we can use to create or update a resource usually. Here's an example:
@@ -234,14 +230,14 @@ There's various ways except for headers to instruct the server program what to d
    {
      "name" : "a new product" 
    }
-   ``` 
+   ```
 
-- **router parameters**. As part of a route request, you can have parameters that carry meaning. If the client asks for the route `/products/5` then the 5 can mean the calling client is after a specific product which unique identifier is 5.
-- **query parameter**. At the end of the route, there can be a query section. That section can give further instruction to the request to for example reduce the size of the returning data. The query part starts with a question mark, ? and is followed by key value pairs separated by ampersands, &. It can look like so: `/products?page=1&pageSize=20`  
+- **router parameters**. As part of a route request, you can have parameters that carry meaning. If the client asks for the route `/products/5` then the 5 can mean the calling client is after a specific product whose unique identifier is 5.
+- **query parameter**. At the end of the route, there can be a query section. That section can give further instruction to the request to for example reduce the size of the returning data. Does the query part start with a question mark? and is followed by key-value pairs separated by ampersands, &. It can look like so: `/products?page=1&pageSize=20`  
 
 ### Parsing a body
 
-The request has a `Body` property. Depending on what's in the body, you might need to decode it. Below code is decoding a piece of JSON and writes it to the response stream:
+The request has a `Body` property. Depending on what's in the body, you might need to decode it. Below code is decoding a piece of JSON and writing it to the response stream:
 
 ```go
 package main
@@ -325,7 +321,7 @@ It's possible to call the `Get()` function as well, but only if there is only on
 r.URL.Query().Get("page")
 ```
 
-### HTTP method
+### HTTP method
 
 The method means different things and should be handled differently. To access the request method, there's a `Method` property on the request, `r`.
 
@@ -359,7 +355,7 @@ So how is this better than the other way we've used so far? The first way we lea
 
 ## Assignment - build a first web app
 
-Your web app should have at least one route. Said route should write to the response stream. The web app should start at a specific port, for example 5500.
+Your web app should have at least one route. The said route should write to the response stream. The web app should start at a specific port, for example, 5500.
 
 ## Solution
 
@@ -385,7 +381,3 @@ func main() {
 
 - list details on the request such as the route, the verb used and the query parameters.
 - See if you can serve up different types of data like JSON or images.
-
-##  Post-Lecture Quiz
-
-TODO

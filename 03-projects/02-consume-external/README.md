@@ -1,33 +1,29 @@
-# Go from the beginning - consume an external module
+# Consume an external module
 
 In this chapter, we are looking at downloading and using external modules.
-
-##  Pre-Lecture Quiz
-
-TODO
 
 ## Introduction
 
 This chapter will cover:
 
-- Creating a project
-- Adding an external module to your project
-- Use the external library in your app
+- Creating a project.
+- Adding an external module to your project.
+- Use the external library in your app.
 
 ## External module
 
 To consume an external module, you need to:
 
-- **Import it**, this involves using the `import` instruction and fully qualifying the address to the module's location.
+- **Import it**, involves using the `import` instruction and fully qualifying the address to the module's location.
 - **Use it in code**, call the code from the module that you mean to use
 - **Ensure it's downloaded**, so your code can be run.
 
 ## Import module
 
-To import a module you can do one of two things:
+To import a module, you can do one of two things:
 
 - `go get <path to module>`, this will fetch the module and download it and make it available for your project to use.
-- `go mod tidy`, this commmand checks the imports used in your program and fetches the module if not fetched already.
+- `go mod tidy`, this command checks the imports used in your program and fetches the module if not fetched already.
 
 ## Use it in code
 
@@ -57,7 +53,6 @@ func main() {
   math.Add(1,1) // 2
 }
 ```
-
 
 ## Assignment - consume an external module
 
@@ -101,12 +96,12 @@ Next, lets create some code that will use the external library:
     }
     ```
 
-## Fetch the lib
+### Fetch the lib
 
-Now, we need to resolve the external library. 
+Now, we need to resolve the external library.
 
 1. Run `go mod tidy`:
-    
+
     ```bash
     go mod tidy
     ```
@@ -160,7 +155,7 @@ require github.com/softchris/math v0.2.0
 
 ```
 
-main.go 
+main.go
 
 ```go
 package main
@@ -178,8 +173,4 @@ func main() {
 
 ## Challenge
 
-TODO
-
-##  Post-Lecture Quiz
-
-TODO
+See if you can find another module you want to use in your project. Add it to the project and use it in your code.

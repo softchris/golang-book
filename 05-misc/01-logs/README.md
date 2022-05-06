@@ -1,10 +1,6 @@
-# Go from the beginning - logging
+# Better logging with a logging library
 
-Once you started writing code you realize quite early that you have a need to print things to the screen as well as sometimes to a file or even a log service. What you want to say is usually what type of logging you want to do.
-
-##  Pre-Lecture Quiz
-
-TODO
+Once you start writing code, you realize quite early that you need to print things to the screen as well as sometimes to a file or even a log service. What you want to say is usually what type of logging you want to do.
 
 ## Introduction
 
@@ -15,14 +11,14 @@ In this chapter, you will learn the following:
 
 ## Reasons to log
 
-There are many reasons to log, here's some reasons:
+There are many reasons to log, here are some reasons:
 
-- **Information**, there might be case where you want provide some type of information that could be of use to the one using the program.
-- **Success**. A success message is a little more that just information, it indicates that you succeeded with something.
-- **Warning**. When you have a warning something happened that you should be aware of. It's usually not serious enough to shut down the app but it should make you vigilant, it could be that memory is running low for example.
-- **Error**. When you get an error you tend to end up in a state where it's no longer a wise choice to continue. 
+- **Information**, there might be a case where you want to provide some type of information that could be of use to the one using the program.
+- **Success**. A success message is a little more than just information, it indicates that you succeeded with something.
+- **Warning**. When you have a warning, something happened that you should be aware of. It's usually not serious enough to shut down the app but it should make you vigilant, it could be that memory is running low for example.
+- **Error**. When you get an error, you tend to end up in a state where it's no longer a wise choice to continue.
 - **Performance**. It's common to measure how long something takes, for the sake of improving things this information can be useful.
-- **Other**. There are also other reasons why you would log something, usually that's connected to your business. 
+- **Other**. There are also other reasons why you would log something, usually, that's connected to your business.
 
 ## What to log
 
@@ -32,11 +28,11 @@ The general rule is the more you can log the better. Especially if it's an error
 - What happened
 - Specific error info
 
-For every case you want to log, have a log at how the log message will be used, will a team be logging through these logs, what would help them. See if you can interview someone on that team.
+For every case, you want to log, have a log at how the log message will be used, will a team be logging through these logs, and what would help them. See if you can interview someone on that team.
 
 ## Using `log`
 
-In general you want to log in places where things might go wrong such as when you make web requests, work with I/O and so on.
+In general, you want to log in places where things might go wrong such as when you make web requests, work with I/O and so on.
 
 In general, use these as guidelines for when to log:
 
@@ -47,7 +43,7 @@ You don't want logs on every single line of code.
 
 ### Standard log `Println()`
 
-To produce a standard log message, you can use the `Println()` function in the `log` package. It takes a string and will produce a log message that combines a date, time and your error message. 
+To produce a standard log message, you can use the `Println()` function in the `log` package. It takes a string and will produce a log message that combines a date, time, and your error message.
 
 Here's some code using `Println()`:
 
@@ -72,7 +68,7 @@ It will produce an output like so:
 
 ### Use `Fatal()` for errors
 
-`Println()` produces a normal looking log message with a date, time and message. `Fatal()` is used when you want to end the program. What `Fatal()` does is to print out the message you give it and call `os.Exit(1)`. 
+`Println()` produces a normal looking log message with a date, time and message. `Fatal()` is used when you want to end the program. What `Fatal()` does is to print out the message you give it and call `os.Exit(1)`.
 
 Here's how it can be used:
 
@@ -82,13 +78,13 @@ log.Fatal("quit program due to <specify reason>")
 
 ### Log to a file
 
-If you develop an app, you are likely to run it and keep an eye on the console for what the app prints out. 
+If you develop an app, you are likely to run it and keep an eye on the console for what the app prints out.
 
 However, as your app becomes ready for production, you want to make sure that all logs that can be useful to analyse is kept somewhere, either sent to a log service or stored in a file.
 
-That way, you ensure that you can analyze these logs later to understand where things went wrong or if you want to analyze your programs performance.
+That way, you ensure that you can analyze these logs later to understand where things went wrong or if you want to analyze the performance of your program.
 
-To log to a file, you can use the `SetOutput()` function. It takes a file handler as input. Thereby, you can use these three lines of code to log:
+To log into a file, you can use the `SetOutput()` function. It takes a file handler as input. Thereby, you can use these three lines of code to log:
 
 ```go
 f, err := os.OpenFile("testlogfile", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
@@ -98,13 +94,13 @@ defer f.Close()
 log.SetOutput(f)
 ```
 
-- In the first line, you open up a file "testlogfile" and ensures you can append to it. 
+- In the first line, you open up a file "testlogfile" and ensure you can append it to it.
 
    ```go
    f, err := os.OpenFile("testlogfile", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
    ```
 
-- In the second line, you ensure the file is close the last thing that happens in the program.
+- In the second line, you ensure the file is closed the last thing that happens in the program.
 
    ```go
    defer f.close()
@@ -202,7 +198,7 @@ In this assignment, you will add the `log` library to your code.
     }
    ```
 
-   Lets see how the output differs.
+   Let's see how the output differs.
 
 1. Run the program with `go run`:
 
@@ -244,11 +240,11 @@ In this assignment, you will add the `log` library to your code.
 
    This time around though you see the program exciting with exit status 1.
 
-   The conclusion is that it's better to rely on the `log` library cause you get dates and time and you type less. But there's more, we can log to a file, lets see how we do that next.
+   The conclusion is that it's better to rely on the `log` library because you get dates and times, and you type less. But there's more, we can log to a file, let's see how we do that next.
 
 ### Log to a file
 
-Someone examining the programs output is likely to inspect a log file over looking at the terminal. Lets instruct `log` to log to a file instead.
+Someone examining the output of the program is likely to inspect a log file overlooking the terminal. Let's instruct `log` to log to a file instead.
 
 1. At the start of the `main()` function, add the following code:
 
@@ -263,13 +259,13 @@ Someone examining the programs output is likely to inspect a log file over looki
      defer f.Close()
    ```
 
-   Now you have instructed `log` to write all entried to the file *logfile*. 
+   Now you have instructed `log` to write all entries to the file *logfile*.
 
 1. Run the program again, `go run`:
 
    ```bash
    go run main.go
-   ``` 
+   ```
 
    You should now see the following output:
 
@@ -277,7 +273,7 @@ Someone examining the programs output is likely to inspect a log file over looki
    exit status 1
    ```
 
-   All your log entries have moved to *logfile*, lets see what it looks like:
+   All your log entries have moved to *logfile*, let's see what it looks like:
 
    ```text
    2022/03/28 14:11:24 processing file 'record.csv'
@@ -323,13 +319,4 @@ func main() {
  log.Printf("processing file '%s' \n", fileName)
  ProcessFile(fileName)
 }
-
 ```
-
-## Challenge
-
-TODO
-
-##  Post-Lecture Quiz
-
-TODO

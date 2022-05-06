@@ -1,4 +1,4 @@
-# Go from the beginning - arrays and slices
+# Arrays and slices
 
 In this chapter, we will cover arrays and slices.
 
@@ -12,9 +12,9 @@ This chapter will cover:
 
 ## Arrays
 
-An array is group of elements that are connected. You want to use an array when you have a group of something, like many orders, cars, rows in a file.
+An array is a group of elements that are connected. You want to use an array when you have a group of something, like many orders, cars, and rows in a file.
 
-The idea with an Array, is to collect all that data in one structure. You also want to be able to iterate over it and possibly carry out an operation on it as a group.
+The idea with an Array is to collect all that data in one structure. You also want to be able to iterate over it and carry out an operation on it as a group.
 
 ## Declare an array
 
@@ -30,7 +30,7 @@ Here's the syntax:
 [<capacity>]<type>{...element}
 ```
 
-It starts with the square brackets, `[]`. Within the square brackets you set the capacity, how many elements it can hold.
+It starts with the square brackets, `[]`. Within the square brackets, you set the capacity, and how many elements it can hold.
 
 and here's a more real example:
 
@@ -38,7 +38,7 @@ and here's a more real example:
 cities := [5]string{"NY", "LA"}
 ```
 
-In the preceding code, an array of strings is declared. It has capacity for 5 elements and two of the places are filled with "NY" and "LA". Note also because we set the capacity to 5 and the number of elements it's assigned is 2, there's 3 spaces free.
+In the preceding code, an array of strings is declared. It has a capacity for 5 elements and two of the places are filled with "NY" and "LA". Note also because we set the capacity to 5 and the number of elements it's assigned is 2, there are 3 spaces free.
 
 ### Capacity by inference
 
@@ -52,7 +52,7 @@ The preceding code has 4 elements, and that's also its capacity.
 
 ## Accessing elements
 
-The way to access an element is by using it's index. Index is 0 based, meaning the first index is 0 and its last is the length -1. 
+The way to access an element is by using its index. The index is 0-based, meaning the first index is 0 and its last is the length -1.
 
 ```go
 ids := [...]int{1, 2, 3, 4}
@@ -90,7 +90,7 @@ s[i:p]
 
 - `s`, the array
 - `i`, the first index of the array to take elements from
-- `p`, The variable p corresponds to the last element in the underlying array that can be used in the new slice. I.e cut right before this index.
+- `p`, The variable p corresponds to the last element in the underlying array that can be used in the new slice. I.e. cut right before this index.
 
 ```go
 items := [5]int{1,2,3,4,5}
@@ -124,7 +124,7 @@ remove := 2 // remove index
 letters = append(letters[:remove], letters[remove+1:]...)
 ```
 
-### Create a slice with make
+### Create a slice with `make()`
 
 You can use the `make()` method to create a slice. Here's how:
 
@@ -141,7 +141,7 @@ fmt.Println(len(slice2))
 fmt.Println(cap(slice2))
 ```
 
-Here, the slice has length 2 and capacity 5.
+Here, the slice has a length of 2, and a capacity of 5.
 
 ### Copy elements
 
@@ -152,7 +152,7 @@ copy(dest, arr[0:2]) // copies slice {1,2} into dest
 fmt.Println(dest) // [1 2 0 0 0]
 ```
 
-## Assignment - create an array
+## Assignment - store log entries
 
 Create an array meant for log entries. It can be used in the following way:
 
@@ -168,7 +168,7 @@ command> quit
 bye
 ```
 
-So you need to have a way to store multiple strings and list them when asked for.
+So, you need to have a way to store multiple strings and list them when asked for.
 
 Here's some starter code to deal with console input:
 
@@ -247,4 +247,3 @@ func main() {
  fmt.Println("bye")
 }
 ```
-

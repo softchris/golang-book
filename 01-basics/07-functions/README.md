@@ -1,10 +1,6 @@
-# Go from the beginning - functions
+# Using functions
 
-In this part, we will discuss how you can define and use functions. Functions are great when you have the same type of code used in many places. By using functions you thereby reduce repetition.
-
-##  Pre-Lecture Quiz
-
-TODO
+In this chapter, we will discuss how you can define and use functions. Functions are great when you have the same type of code used in many places. By using functions, you thereby reduce repetition.
 
 ## Introduction
 
@@ -16,7 +12,7 @@ This chapter will cover:
 
 ## Why functions
 
-As soon as you have a set of statements you repeat in many places, it's a good use case for creating a function. Typical things you put in functions is logging to a file, performing a calculation or talking to a data source.
+As soon as you have a set of statements you repeat in many places, it's a good use case for creating a function. Typical things you put in functions are logging to a file, performing a calculation or talking to a data source.
 
 ## Your first function `main()`
 
@@ -31,14 +27,14 @@ There's only one such function, it's called an entry point and represents the st
 
 ## The anatomy of a function
 
-A function consists of various parts. By incorporating all these parts you ensure you have a reusable piece of code you can use in many places.
+A function consists of various parts. By incorporating all these parts, you ensure you have a reusable piece of code you can use in many places.
 
-Here's the parts you need to care about:
+Here are the parts you need to care about:
 
 - `func`, the keyword `func`.
 - **parameters**, 0 to many parameters
-- **a function body**, i.e statements that says what the function does
-- **a return construct**, if the function returns something
+- **a function body**, i.e. statements that say what the function does.
+- **a return construct**, if the function returns something.
 
 Here's an example:
 
@@ -53,7 +49,6 @@ In the preceding code, the function is named `add()`. It has the parameters `fir
 ```go
 return first + second
 ```
-
 
 ## Adding a return type
 
@@ -106,9 +101,9 @@ Putting it altogether you get a function that looks like so:
 
 ```go
 func calc(first int, second int) (sum int, product int) {
- sum = first + second
- product = first * second
- return
+  sum = first + second
+  product = first * second
+  return
 }
 ```
 
@@ -154,7 +149,7 @@ Note how you assign the two returned values to variables `sum` and `product`.
     }
     ```
 
-At this point, the `log()` function isn't very flexible, it prints "message" every time its invoked.
+At this point, the `log()` function isn't very flexible, it prints "message" every time it's invoked.
 
 To make the `log()` function more flexible, lets add a parameter.
 
@@ -192,7 +187,3 @@ func main() {
   log("there")
 }
 ```
-
-## Post-Lecture Quiz
-
-TODO

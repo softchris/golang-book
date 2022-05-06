@@ -1,10 +1,6 @@
-# Go for beginners - working with JSON
+# Working with JSON
 
 In this chapter, you will work with the JSON data format.
-
-##  Pre-Lecture Quiz
-
-TODO
 
 ## Introduction
 
@@ -16,9 +12,9 @@ In this chapter, you will learn the following:
 
 ## JSON
 
-JSON is lightweight data format for storing and transporting data. The acronym stands for **J**ava**S**cript **O**bject **n**otation.
+JSON is a lightweight data format for storing and transporting data. The acronym stands for **J**ava**S**cript **O**bject **n**otation.
 
-The format is commonly used in Web services. Usually data is encoded as JSON and sent via HTTP. A client, for example a web browser, consume the JSON data and use it to render a frontend with the help of HTML and CSS. It's also common for JSON to be used as a way to communicate between services.
+The format is commonly used in Web services. Usually, data is encoded as JSON and sent via HTTP. A client, for example, a web browser, consumes the JSON data and uses it to render a frontend with the help of HTML and CSS. It's also common for JSON to be used to communicate between services.
 
 Here's an example of what the format looks like:
 
@@ -35,13 +31,13 @@ Here's an example of what the format looks like:
 }
 ```
 
-The above depicts a list of products. Each key needs to be encased with quotes and values can be everything from primitives like numbers, strings, booleans etc to more complex types like an array or an object.
+The above depicts a list of products. Each key needs to be encased with quotes and values can be everything from primitives like numbers, strings, Booleans etc to more complex types like an array or an object.
 
-what is this format, what contexts is it used in.
+what is this format, and what contexts is it used in.
 
 ## Reading JSON
 
-To work with JSON you need to use the `encoding/json` library. It allows you to both read and write JSON data. 
+To work with JSON, you need to use the `encoding/json` library. It allows you to both read and write JSON data.
 
 To read JSON data you need to first have a structure in your Go code read to map to the JSON data. Imagine having the following JSON data:
 
@@ -71,15 +67,15 @@ type Response struct {
 
 ### Notation
 
-The first step is to create the structures needed to match your JSON data. But, you also need to do one more thing, add notations. The problem we are looking to solve is is how the `Product` property is called `Id` and not `id` as it's called in the JSON data.
+The first step is to create the structures needed to match your JSON data. But you also need to do one more thing, add notations. The problem we are looking to solve is how the `Product` property is called `Id` and not `id` as it's called in the JSON data.
 
 > Won't that just work?
 
-Unfortunately not
+Unfortunately, not
 
-> Why don't you just name the struct property `id` 
+> Why don't you just name the struct property `id`
 
-The library `encoding/json`, is separate package from the main package, meaning we need to make a field name, defined in the main package, uppercase for the `encoding/json` package to find it.
+The library `encoding/json`, is a separate package from the main package, meaning we need to make a field name, defined in the main package, uppercase for the `encoding/json` package to find it.
 
 So that means, we need to add the following annotations to our above created structs:
 
@@ -94,7 +90,7 @@ type Response struct {
 }
 ```
 
-What these annotations do is to say, in the JSON data, look for properties with these names and map it to the following property. Like in this example from above:
+What these annotations do is to say, in the JSON data, look for properties with these names and map them to the following property. Like in this example from above:
 
 ```go
 Id int `json: "id"`
@@ -136,7 +132,7 @@ func main() {
 }
 ```
 
-Note how we also convert the response to a byte array `[]byte(str)` and how the data is written in the second parameter to the `person` instance as reference, `&person`.
+Note how we also convert the response to a byte array `[]byte(str)` and how the data is written in the second parameter to the `person` instance as a reference, `&person`.
 
 **read from a file**
 
@@ -181,12 +177,12 @@ func main(){
 
 We've seen so far how we can read JSON data either from a string literal or from a file, but what about writing data?
 
-There are two cases that are important for us:
+Two cases are important for us:
 
-- Writing data to a structure. We are working with structs so any changes we do on the structs needs to be converted back to JSON.
+- Writing data to a structure. We are working with structs so any changes we do on the structs need to be converted back to JSON.
 - Generate JSON from data. In the second case, we might be working with a raw string literal or even with pure primitives, how would we do that?
 
-Let's address both these cases. What these cases have in common is the `Marshal()` function. The `Marshal()` method is capable of taking a primitive or a struct and take that into JSON:
+Let's address both these cases. What these cases have in common is the `Marshal()` function. The `Marshal()` method can take a primitive or a struct and taking that into JSON:
 
 ```go
 package main
@@ -289,10 +285,17 @@ func main() {
 
 ## 🚀 Challenge
 
-TODO
+See if you can add `products` to your JSON file. Here's the JSON for it:
 
-## Post-Lecture Quiz
+```json
+"products" :[{
+  "id": 1
+  "name" "product"
+}]
+```
 
-TODO
+What structs do you need and how would you iterate over them?
+
+## Learn more
 
 <https://gobyexample.com/json>

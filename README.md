@@ -19,20 +19,16 @@ Welcome to Go from the beginning, a free book containing 19 lessons that will ta
 | 13 | Projects | Create your first project | Learn how to create your first project | [Lesson](/03-projects/01-first-project/README.md)  |
 | 14 | Projects | Consume external packages | Learn how to use external packages | [Lesson](/03-projects/02-consume-external/README.md)  |
 | 15 | Projects | Create shared module | Create a module you can share with others | [Lesson](/03-projects/03-create-shared-module/README.md)  |
-| 16 | Projects | Testing | Learn to test your code | [Lesson](/03-projeccts/04-testing/README.md)  | 
-| 17 | Projects | Documentation | Learn to document your code | [Lesson](/03-projects/05-documentation/README.md)  | 
-| 18 | Web Dev | JSON | Learn to work with the JSON format | [Lesson](/04-webdev/01-json/README.md)  | 
-| 19 | Web Dev | Build a Web App | Learn how to build a web app capabable of serving many different formats | [Lesson](/04-webdev/02-web-dev/README.md)  | 
-| 20 | Miscellaneous | Logs | Use logging for better management of all kinds of messages in your app | [Lesson](/05-misc/01-logs/README.md)  |
-| 21 | Miscellaneous | Strings | Work with the string library | [Lesson](/05-misc/02-strings/README.md)  |
-| 22 | Miscellaneous | Regex | Work with regular epressions | [Lesson](/05-misc/03-regex/README.md)  |
-| 23 | IO | Read and write to files | Learn to read from and write to files | [Lesson](/06-io/01-read-write-files/README.md)  |
-| 24 | IO | Files and directories | Learn to perform operations on files and directories | [Lesson](/06-io/02-read-write-files/README.md)  |
-| 25 | IO | Zip files | Learn to compress files and directories | [Lesson](/06-io/03-compress-files/README.md)  |
-
-TODO
-- concurrency
-- databases
+| 16 | Projects | Testing | Learn to test your code | [Lesson](/03-projeccts/04-testing/README.md)  |  
+| 17 | Web Dev | JSON | Learn to work with the JSON format | [Lesson](/04-webdev/01-json/README.md)  | 
+| 18 | Web Dev | Build a Web App | Learn how to build a web app capabable of serving many different formats | [Lesson](/04-webdev/02-web-dev/README.md)  | 
+| 19 | Miscellaneous | Logs | Use logging for better management of all kinds of messages in your app | [Lesson](/05-misc/01-logs/README.md)  |
+| 20 | Miscellaneous | Strings | Work with the string library | [Lesson](/05-misc/02-strings/README.md)  |
+| 21 | Miscellaneous | Regex | Work with regular epressions | [Lesson](/05-misc/03-regex/README.md)  |
+| 22 | Miscellaneous | Goroutines | Work with goroutines and channels | [Lesson](/05-misc/04-goroutines/README.md)  |
+| 23 | Miscellaneous | Database with Sqlite | Work with databases | [Lesson](/05-misc/05-sqlite/README.md)  |
+| 24 | IO | Read and write to files | Learn to read from and write to files | [Lesson](/06-io/01-read-write-files/README.md)  |
+| 25 | IO | Files and directories | Learn to perform operations on files and directories | [Lesson](/06-io/02-read-write-files/README.md)  |
 
 ## How to use this content
 

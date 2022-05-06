@@ -39,11 +39,11 @@ It will match like so:
 
 > highl**an**ds is a part of Scotl**an**d
 
-For simpler cases, where you are just looking to see if a specific word matches, in one or more places in a sentence, a pattern like the above is enough.
+For simpler cases, where you are looking to see if a specific word matches, in one or more places in a sentence, a pattern like the above is enough.
 
 ### RegEx in Go
 
-To start using RegEx in Go, there's the regexp library. There's two approaches:
+To start using RegEx in Go, there's the regexp library. There are two approaches:
 
 - `regexp` directly, here's an example:
 
@@ -51,7 +51,7 @@ To start using RegEx in Go, there's the regexp library. There's two approaches:
    matched, err := regexp.FindString("an", "highlands is a part of Scotland")
    ```
 
-   Here, you get a boolean back that returns true if there's a match. 
+   Here, you get a boolean back that returns true if there's a match.
 
 - **compiled**, in this way, you compile a regular expression and then calls a method on it, like so:
 
@@ -66,7 +66,7 @@ To start using RegEx in Go, there's the regexp library. There's two approaches:
 
 ## Character classes
 
-Character classes is able to distinguish between different types of characters. Different types can be newlines, digits, letters and so on.
+Character classes are able to distinguish between different types of characters. Different types can be newlines, digits, letters and so on.
 
 Let's have a look at some common types you are likely to encounter:
 
@@ -122,7 +122,7 @@ If you want to express repetition, there's two characters of interest:
    regexp.MatchString("PA*", "PA111")
    ```
 
-- `?`, also known as a greedy or optional quantifier. It looks backwards and makes it optional and takes it if it can. Consider this case:
+- `?`, also known as a greedy or optional quantifier. It looks backwards and makes it optional and takes it, if it can. Consider this case:
 
    ```text
    http
@@ -175,11 +175,11 @@ To get the data you need, you want everything after the colon, :. You can constr
 ```
 
 what we are doing is defining we want to capture a group using parenthesis `()` but that group should happen after:
- 
-- a number of letters, `\w+` 
-- followed by a colon, `:` 
+
+- a number of letters, `\w+`
+- followed by a colon, `:`
 - followed by 0 or 1 space `\s?`
-- then our group `(\w+)`, one ore more letters 
+- then our group `(\w+)`, one ore more letters
 
 All this ends up capturing myarticle, 114 and 3.
 
@@ -206,7 +206,7 @@ We will get a key and value that says:
 protocol: http
 ```
 
-Syntaxwise, we need to use `?<name of our group>` within our parenthesis ().
+Syntax wise, we need to use `?<name of our group>` within our parenthesis ().
 
 You use the following syntax:
 
@@ -270,7 +270,7 @@ Note this line where each name is assigned a value:
 result[name] = m[i]
 ```
 
-Finally, to get the values, we can printt them out as they are now in a map structure:
+Finally, to get the values, we can print them out as they are now in a map structure:
 
 ```go
 fmt.Println(result["protocol"]) // http
@@ -346,13 +346,13 @@ You can also use capture groups and replace a captured group with a string. Here
 ```go
 r := regexp.MustCompile(`(\d)`)
  s := r.ReplaceAllString("productid:114", "0${1}") // s = productid:0114
-``` 
+```
 
 in the above case, we replace 114 with itself but we also prepend it with a 0.
 
 ### Use case, replace XML Nodes
 
-Imagine you are working with XML for example and want to rename all nodes with a certain name. 
+Imagine you are working with XML for example and want to rename all nodes with a certain name.
 
 Here's your XML
 
@@ -377,7 +377,7 @@ Here's your XML
 
 Imagine `title` should be replaced by `name`, how do we do that?
 
-Well, it would be easy to just replace title by name. Let's say we have this file content though:
+Well, it would be straight forward to replace title by name. Let's say we have this file content though:
 
 ```xml
 <books>
@@ -393,7 +393,7 @@ Well, it would be easy to just replace title by name. Let's say we have this fil
 ```
 
 Then we would not only rename the element `title` to `name` but also the content would be replaced o "The title is Romeo and Juliet", that's NOT what we want.
-    
+
 We need to restrict the replace operation to only target element, like so:
 
 ```text
@@ -428,7 +428,7 @@ ${1}name${3}
 - `name` is the string we replace `title` with.
 - `{3}` corresponds to capture group matching `>`.
 
-## Assignment - replace content
+## Assignment - replace content
 
 Take the file *books.xml* containing:
 
@@ -458,7 +458,7 @@ and replace:
 
 TIP: you might need to apply the replace twice.
 
-## Solution II
+## Solution II
 
 ```go
 package main
@@ -495,4 +495,3 @@ func main() {
  fmt.Println(s)
 }
 ```
-

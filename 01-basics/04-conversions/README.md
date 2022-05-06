@@ -1,23 +1,23 @@
-# Go from the beginning - converting between types
+# Converting between types
 
-This article covers how to convert between strings and numbers.
+This chapter covers how to convert between strings and numbers.
 
 ## Introduction
 
-This chapter will cover:
+This chapter will:
 
-- Introduce uses cases where data conversion make sense
+- Introduce uses cases where data conversion makes sense.
 - Showcase how to use `strconv` library.
 
 ## Why convert between types
 
-There's different data types and a need to convert between them. For example, we often need to convert between text and numbers for presentational and other reasons. We also need to convert between numbers and decimals without losing information in the process.
+There are different data types and a need to convert between them. For example, we often need to convert between text and numbers for presentational and other reasons. We also need to convert between numbers and decimals without losing information in the process.
 
 The main package for dealing with conversions in Go is `strconv`.
 
-## Use case - command line arguments
+## Use case - command-line arguments
 
-Let's show a common case where you start off with strings and you need to make it into numbers, command line arguments. To use command line arguments in a program, you need the `os` package.  
+Let's show a common case where you start off with strings and you need to make it into numbers, command-line arguments. To use command-line arguments in a program, you need the `os` package.  
 
 `os.Args` points to an array representing your command line arguments. To access a specific argument, you would use the index operator `[]` like so:
 
@@ -25,17 +25,33 @@ Let's show a common case where you start off with strings and you need to make i
 arg := os.Args[1]
 ```
 
-What if you started this program like so:
+You can then start your program like so:
 
 ```bash
 go run main.go 1
 ```
 
+The 1 would then be stored in `arg`.
+
 ### Finding the type
 
 What type is `arg` in our code above? There are some ways to find out:
 
-- **IDE**, if you use for example Visual Studio code and the Go plugin, hovering over the code, it will tell you that `os.Args` is a string array, `string[]`.
+- **IDE**, if you use for example Visual Studio Code and the Go plugin, hovering over the code, it will tell you that `os.Args` is a string array, `string[]`.
+- **PrintF() and %T**. One of the easiest ways to find the type is typing like so:
+
+   ```go
+   Printf("%T", os.Args[1])
+   Printf("%T", 1)
+   ```
+
+   You would get an output like so:
+
+   ```output
+   string
+   int
+   ```
+
 - **Type coercion**, you could try to modify that code and coerce it to be an integer like so, now what?
 
     ```go
@@ -48,7 +64,7 @@ What type is `arg` in our code above? There are some ways to find out:
     cannot use os.Args[1] (type string) as type int in assignment
     ```
 
-- **Use reflection**. Another way to find the above oout would have been to use the `reflect` package like so:
+- **Use reflection**. Another way to find the above is by using the `reflect` package like so:
 
     ```go
     package main
@@ -69,7 +85,7 @@ What type is `arg` in our code above? There are some ways to find out:
 
 ### Addressing the problem with `strconv`
 
-Ok, so we know what type something is, what if we need to use these command line arguments, which are string and feed them into let's say a calculator program?
+Ok, so we know what type something is, what if we need to use these command-line arguments, which are of type `string`, and feed them into let's say a calculator program?
 
 Consider the below code, that at present WOULDN'T compile:
 
@@ -94,7 +110,7 @@ The reason is that the values on `os.Args[1]` and `os.Args[2]` are `string` not 
 
 ## Convert from string to int with `strconv`
 
-To convert strings to integer, we need to use `strconv` and call the `Atoi()` (stands for Ascii to integer) function like so:
+To convert strings to integers, we need to use `strconv` and call the `Atoi()` (stands for Ascii to integer) function like so:
 
 ```go
 package main
@@ -117,13 +133,13 @@ func main() {
 }
 ```
 
-Note `_`, this is a *don't care* symbol. What happens when you call `Atoi()` is that it returns two things, the number and an error, if it fails.
+Note `_`, this is a *don't care* symbol. What happens when you call `Atoi()` is that it returns two things, the number and an error if it fails.
 
 ### Handling conversion error
 
 To handle an error, we need to store it in a variable, `err` and inspect it. If it's not `nil`, then we have an error.
 
-Here's how we could encode that behavior below:
+Here's how we could encode that behaviour below:
 
 ```go
 package main
@@ -147,7 +163,7 @@ func main() {
 }
 ```
 
-Try compile the above program and run it like so:
+Try to compile the above program and run it like so:
 
 ```bash
 main 1 # 1
@@ -156,7 +172,7 @@ main hi # trconv.Atoi: parsing "hi": invalid syntax, Couldn't convert: hi
 
 ## Parse string to int
 
-There's another way to convert a string to a int. That's by using the `ParseInt()` method. It does more than converting though, it does two things in fact:
+There's another way to convert a string to an int. That's by using the `ParseInt()` method. It does more than converting though, it does two things in fact:
 
 - **base**, you can select according to what base to interpret the number as.
 - **size**, bit size, from 0 to 64.
@@ -202,7 +218,7 @@ str, _ := strconv.Itoa(noOfPlayers)
 
 ## Additional parsing
 
-The `strconv` library is what you want if you start with a string and you want to convert to and from another format. Learn more about [strconv library here](https://pkg.go.dev/strconv)
+The `strconv` library is what you want if you start with a string, and you want to convert to and from another format. Learn more about [strconv library here](https://pkg.go.dev/strconv)
 
 ## Assignment
 
@@ -238,12 +254,10 @@ func main() {
 
 ## 🚀 Challenge
 
-What happens if run the program like so? 
+What happens if run the program like so?
 
 ```bash
 go run main.go one two
 ```
 
 Handle any conversion error and call `panic()` if there's a conversion error.
-
-

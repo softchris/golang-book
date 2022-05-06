@@ -1,6 +1,6 @@
 ## Compress files and directories
 
-TODO
+Coming soon
 
 ## Assignment
 

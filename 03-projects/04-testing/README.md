@@ -1,24 +1,20 @@
 # Test your code in Go
 
-TODO
-
-##  Pre-Lecture Quiz
-
-TODO
+In this chapter, we will look at creating and running unit tests.
 
 ## Introduction
 
 This chapter will cover:
 
-- Why we test our code
-- The testing library in Go
-- Authoring and running a test
-- Controlling how to run your tests
-- Produce coverage reports
+- Why you should test your code.
+- The testing library in Go.
+- Authoring and running a test.
+- Controlling how to run your tests.
+- Produce coverage reports.
 
 ## Why we test
 
-It's good to test your code to ensure it works as intended. In this chapter we're looking at unit tests specifically. 
+It's good to test your code to ensure it works as intended. In this chapter, we're looking at unit tests specifically.
 
 ## What Go provides
 
@@ -103,7 +99,7 @@ func TestAdd(t *testing.T) {
 }
 ```
 
-To run a test, you invoke the `go test` command. Here's different ways to run your tests:
+To run a test, you invoke the `go test` command. Here are different ways to run your tests:
 
 - `go test`, runs the test in the current working directory. Here's what it looks like:
 
@@ -124,24 +120,24 @@ To run a test, you invoke the `go test` command. Here's different ways to run yo
 
    In the verbose version, you see the name of the test and if it failed.
 
-- `go test ./..`, recursive run. If you run the command like so it will run all the tests in the sub folders as well. 
+- `go test ./..`, recursive run. If you run the command like so it will run all the tests in the subfolders as well.
 
 ## Control the test run
 
 There are ways to control how many tests are run. Here are some ways:
 
-  - **Run test by pattern**. . You can provide a pattern to have Go run some of the tests, that matches it by a sub string or even at a certain depth and more. Here's how:
+- **Run test by pattern**. . You can provide a pattern to have Go run some of the tests, which matches it by a substring or even at a certain depth and more. Here's how:
   
     ```console
     go test -run <pattern>
     ```
 
-  - **Skip a test**. `t.Skip()` by calling this inside the test, the test is skipped.
+- **Skip a test**. `t.Skip()` by calling this inside the test, the test is skipped.
 - **Run a single test**. You can run a single test by running a pattern that specifies the package and the name of the test, here's how:
 
    ```console
    go test -run TestAdd ./math
-   ``` 
+   ```
 
    Here's the package is called math and the name of the test is `TestAdd()`.
 
@@ -164,9 +160,9 @@ test-example/math/math.go:7.37,9.2 1 1
 test-example/math/math.go:11.47,13.2 1 0
 ```
 
-This is a format readible by the tool.
+This is a format readable by the tool.
 
-It's a prerequisite to generate said out file before you can view your code's coverage. Place yourself in the directory you mean to measure coverage on and run this command:
+It's a prerequisite to generate said "out file" before you can view your code's coverage. Place yourself in the directory you mean to measure coverage on and run this command:
 
 ```console
 go test -coverprofile=c.out
@@ -178,86 +174,16 @@ Now you are ready to run a command that shows the result in a browser:
 go tool cover -html=c.out
 ```
 
-The above command spins up a browser and the output looks something like so:
+The above command spins up a browser and the output look something like so:
 
 ![coverage](coverage.png)
 
 The coverage report tells us that the the green portions are covered by tests whereas the red portions should have tests covering it.
 
-## Learn more 
+## Learn more
 
 There's a lot more to learn on testing with Go, have a look at package documentation, [docs](https://pkg.go.dev/testing)
 
-##  Post-Lecture Quiz
+## Challenge
 
-TODO
-
-## Assignment
-
-Given the the following code:
-
-```go
-package arithmetic
-
-func Add(lhs int, rhs int) int {
-  return lhs + rhs
-}
-
-func Subtract(lhs int, rhs int) int {
-  return lhs - rhs
-}
-
-func Divide(lhs float32, rhs float32) float32 {
-  return lhs / rhs
-}
-
-func Multiply(lhs int, rhs int) {
-  return lhs * rhs
-}
-```
-
-Write a test module for above code and make sure the tests pass
-
-## Solution
-
-*arithmetic_test.go*
-
-```go
-package arithmetic
-
-import (
- "testing"
-)
-
-func TestAdd(t *testing.T) {
-  total := Add(2, 2)
-  if total != 4 {
-    t.Errorf("Sum was incorrect, Actual: %d, Expected: %d", total, 4)
-  }
-  t.Log("running TestAdd")
-}
-
-func TestSubtract(t *testing.T) {
-  total := Subtract(2, 2)
-  if total !=0 {
-    t.Errorf("Sum was incorrect, Actual: %d, Expected: %d", total, 0)
-  }
-  t.Log("running TestSubtract")
-}
-
-func TestMultiply(t *testing.T) {
-  total := Multiply(2, 3)
-  if total != 6 {
-    t.Errorf("Sum was incorrect, Actual: %d, Expected: %d", total, 6)
-  }
-  t.Log("running TestMultiply")
-}
-
-func TestDivide(t *testing.T) {
-  total := Divide(float64(2), float64(2))
-  if total != 1 {
-    t.Errorf("Sum was incorrect, Actual: %d, Expected: %d", total, 1)
-  }
-  t.Log("running TestDivide")
-}
-```
+Create a test for a piece of code you wrote. Run the test. See if you can produce a coverage report and implement any gaps pointed out by the report.

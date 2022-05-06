@@ -2,6 +2,16 @@
 
 Things you likely want to do to files and directories are moving them about, removing them, rename them etc. In short, high-level operations that is less about the content of the file but doing something with it.
 
+## Introduction
+
+In this chapter you will:
+
+- Analyze a file for its metadata like size, modified date and more.
+- Copy files from one location to the next.
+- Rename files.
+- Remove files.
+- Create and read directories.
+
 ## File information
 
 You might want to look at a specific file and find out various details about it. Things that can be interesting are:
@@ -21,6 +31,12 @@ fmt.Println("Size:", fileStat.Size())             // Length in bytes for regular
 fmt.Println("Permissions:", fileStat.Mode())      // File mode bits
 fmt.Println("Last Modified:", fileStat.ModTime()) // Last modification time
 fmt.Println("Is Directory: ", fileStat.IsDir())   // Abbreviation for Mode().IsDir()
+```
+
+Also when you call `ReadDir()` you get back an array of `FileInfo` objects:
+
+```go
+files, err := ioutil.ReadDir(path)
 ```
 
 ## Copy file
@@ -113,5 +129,63 @@ TODO, copy, rename, remove, check for existence
 
 ## Assignment
 
+Create the following files and directories like so:
+
+```text
+tmp/
+  a.txt
+  b.xt
+  subdir/
+```
+
+Your program should read the diretory *tmp* and for each entry list, if it's a dir or a file, the size and when last modified.
+
+The programs output should look something like:
+
+```output
+Reading directory tmp:
+Name, Type, Size, Modified
+a.txt, file, 1kb, 2022-01-01
+b.txt, file, 1kb, 2022-01-01
+subdir, directory, 1kb, 2022-01-01
+```
+
 ## Solution
 
+```go
+package main
+
+import (
+ "fmt"
+ "io/ioutil"
+ "log"
+)
+
+func GetType(isDir bool) string {
+ if isDir {
+  return "directory"
+ }
+ return "file"
+}
+
+func main() {
+ var path string = "tmp"
+ files, err := ioutil.ReadDir(path)
+ if err != nil {
+  log.Fatal(err)
+ }
+ fmt.Println("Reading directory ", path)
+ fmt.Println("Name, Type, Size, Modified")
+ for _, file := range files {
+  if err != nil {
+   log.Fatal(err)
+  }
+  fmt.Printf("File Name: %s, ", file.Name())
+  fmt.Printf("Type: %s, ", GetType(file.IsDir()))
+  fmt.Printf("Size: %d, ", file.Size())             
+  fmt.Printf("Last Modified: %s, ", file.ModTime()) 
+  fmt.Print("\n")
+ }
+}
+
+```

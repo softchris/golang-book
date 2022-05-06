@@ -104,15 +104,13 @@ func main() {
 	OpenJson()
 
 	/*
-				  CHECK - Append text to file
-					Create empty file
-					CHECK - Read dir
-					CHECK Create dir
-					CHECK Copy file
-				  Move file
-					CHECK Get file metadata
-					CHECK Delete file
-					zip, compress files
-		      zip, read content
+		  CHECK - Append text to file
+			Create empty file
+			CHECK - Read dir
+			CHECK Create dir
+			CHECK Copy file
+		  Move file
+			CHECK Get file metadata
+			CHECK Delete fil
 	*/
 }

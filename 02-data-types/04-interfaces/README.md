@@ -1,24 +1,20 @@
-# Go from the beginning - interfaces
+# Interfaces
 
-This chapter covers what an interface and what too use it for.
-
-##  Pre-Lecture Quiz
-
-TODO
+This chapter covers what an interface is and what to use it for.
 
 ## Introduction
 
 This chapter will cover:
 
-- What an interface and how it differs from a struct
-- How to add behavior
-- Implement an interface
-- Type assertions
-- Changing a value
+- What is an interface and how does it differ from a struct.
+- How to add behaviour.
+- Implement an interface.
+- Type assertions.
+- Changing a value.
 
 ## Interface
 
-To describe what an interface is, lets start by talking about structs and how they are different from an interface.
+To describe what an interface is, let's start by talking about structs and how they are different from an interface.
 
 With structs, we can define properties we want a concept to have, like for example a car:
 
@@ -29,21 +25,21 @@ type Car struct {
 }
 ```
 
-An interface is meant to communicate something different, a behavior. Instead of describing the car itself, like a struct does, it describes what a car can do.  
+An interface is meant to communicate something different, a behaviour. Instead of describing the car itself, as a struct does, it describes what a car can do.  
 
-## Interface - describing a behavior
+## Interface - describing a behaviour
 
-Now that we've described how an interface differs from a struct, lets talk about the motivation for using an interface. There are a couple of good reasons for when to use an interface:
+Now that we've described how an interface differs from a struct, let's talk about the motivation for using an interface. There are a couple of good reasons for when to use an interface:
 
-- **Adding behavior**. When you want your types to have a behavior, that's when you want an interface
-- **Communicate via contract**. Often, when you call other code, you want to reveal as little of your concrete implementation as possible. Instead of saying, here's car, you might want to say, here's something that can run. It enables your code to be flexible and you don't have to implement specific code for each type but can instead write code that deals with a certain behavior. 
+- **Adding behaviour**. When you want your types to have a behaviour, that's when you want an interface
+- **Communicate via contract**. Often, when you call other code, you want to reveal as little of your concrete implementation as possible. Instead of saying, here's a car, you might want to say, here's something that can run. It enables your code to be flexible and you don't have to implement specific code for each type but can instead write code that deals with a certain behaviour.
 
 ### Define an interface
 
 To define an interface, you need the keywords `type` and `interface` and you need a set of methods, one or many that a type should implement. Here's an example interface:
 
 ```go
-type Desribeable interface {
+type Describable interface {
   describe() string
 }
 ```
@@ -81,7 +77,7 @@ func (r Rectangle) location() Point {
 }
 ```
 
-So what's going on here? Let's look at the first method `area()`:
+So, what's going on here? Let's look at the first method `area()`:
 
 ```go
 func (r Rectangle) area() int {
@@ -89,24 +85,24 @@ func (r Rectangle) area() int {
 }
 ```
 
-It looks like a regular function but there's this `(r Rectangle)` right before the function name. That's a signal to Go that you are implementing a certain function on the type `Rectangle`. There's also a second implementation for `location()`. 
+It looks like a regular function but there's this `(r Rectangle)` right before the function name. That's a signal to Go that you are implementing a certain function on the type `Rectangle`. There's also a second implementation for `location()`.
 
-By implementing both these methods, `Rectangle` have now fully implemented the `Shape` interface.
+By implementing both these methods, `Rectangle` has now fully implemented the `Shape` interface.
 
 ### Pass an interface
 
-Ok, so we've fully implemented an interface, what does it allow me to do? Well there are two things you can do:
+Ok, so we've fully implemented an interface, what does it allow me to do? Well, there are two things you can do:
 
-- **Call properties and behavior**. At this point, you are ready to create an instance and call both properties and methods (its new behavior):
+- **Call properties and behaviour**. At this point, you are ready to create an instance and call both properties and methods (its new behaviour):
 
    ```go
    var rectangle Rectangle = Rectangle{x: 5, y: 2}
    fmt.Println(rectangle.area()) // prints 10
    ```
 
-   Great, our `Rectangle` type has both the properties `x` and `y` as well as the behavior from `Shape`.
+   Great, our `Rectangle` type has both the properties `x` and `y` as well as the behaviour from `Shape`.
 
-- **Pass an interface**. Imagine you wanted to pass the behavior to a function to make it flexible:
+- **Pass an interface**. Imagine you wanted to pass the behaviour to a function to make it flexible:
 
    ```go
    func printArea(shape Shape) {
@@ -123,7 +119,7 @@ Ok, so we've fully implemented an interface, what does it allow me to do? Well t
 
 ### Implement `Square`
 
-To really see the power in what we just created, lets create another struct `Square` and have it implement `Shape`:
+To see the power in what we just created, let's create another struct `Square` and have it implement `Shape`:
 
 ```go
 type Square struct {
@@ -145,9 +141,9 @@ func main() {
 }
 ```
 
-The power lies in the fact that `printArea()` doesn't have to deal with the internals of `Rectangle` or `Shape`, it just need the parameter to implement `Shape`, a behavior.
+The power lies in the fact that `printArea()` doesn't have to deal with the internals of `Rectangle` or `Shape`, it just needs the parameter to implement `Shape`, a behaviour.
 
-### Full code
+### Full code
 
 Here's the full code:
 
@@ -207,7 +203,7 @@ func main() {
 
 So far, a `Rectangle` or `Square` implements the `Shape` interface
 
-Lets have a closer look at this code:
+Let's have a closer look at this code:
 
 ```go
 var shape Shape = Rectangle{x: 5, y: 2}
@@ -230,11 +226,11 @@ var shape Shape = Rectangle{x: 5, y: 2}
 fmt.Println(shape.(Rectangle).x) // 5
 ```
 
-Ok, that works, so `.(<type>)` works, if the underlying type is the correct type. 
+Ok, that works, so `.(<type>)` works, if the underlying type is the correct type.
 
 ## Change a value
 
-So one thing about our approach so far is that we have implemented interfaces with methods that reads data from the underlying struct instances. What if we want to change data, can we do that?
+So, one thing about our approach so far is that we have implemented interfaces with methods that read data from the underlying struct instances. What if we want to change data, can we do that?
 
 Let's look at an example:
 
@@ -245,7 +241,7 @@ import "fmt"
 type Car struct {
  speed int
  model string
- make  string
+ make string
 }
 
 type Runnable interface {
@@ -263,7 +259,7 @@ func main() {
 }
 ```
 
-Running this code, it returns `0`. So looking at our `run()` method:
+Running this code, it returns `0`. So, looking at our `run()` method:
 
 ```go
 func (c Car) run() {
@@ -271,7 +267,7 @@ func (c Car) run() {
 }
 ```
 
-shouldn't this work? Well no, because, you are not really changing the instance. For that, you need to send a reference. 
+shouldn't this work? Well, no, because you are not changing the instance. For that, you need to send a reference.
 
 A slight alteration to the `run()` method, with `*`:
 
@@ -380,13 +376,4 @@ func main() {
  v.land()
  fmt.Println(v.velocity)
 }
-
 ```
-
-## Challenge
-
-TODO
-
-## Post-Lecture Quiz
-
-TODO

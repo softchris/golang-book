@@ -1,10 +1,6 @@
 # Create a module meant for sharing
 
-TODO
-
-##  Pre-Lecture Quiz
-
-TODO
+In this chapter, we will cover how you can create a module you can share with others.
 
 ## Introduction
 
@@ -19,15 +15,15 @@ This chapter will cover:
 
 When you build a module meant for sharing, there's some gotchas:
 
-- you need to create a package
-- your package won't be called main
-- there's concept of public and private parts of your code
-- you can't test it locally
-- upload your package to GitHub for wide distribution
+- You need to create a package.
+- Your package won't be called main.
+- There's the concept of public and private parts of your code.
+- You can test it locally.
+- Upload your package to GitHub for wide distribution.
 
 ## Assignment - create a module meant for sharing and consume it
 
-To create a moodule meant for wider use you need to first initialize a module.
+To create a module meant for wider use you need to first initialize a module.
 
 1. Create a directory *logger* for your new package:
 
@@ -113,7 +109,7 @@ You can test your package locally. To do so you need a separate package that you
     }
    ```
 
-   At this point, you are consuming the "logger" package but it's pointing to GitHub and your package don't live there yet. However, you can repoint to a local address on your machine, lets do that next.
+   At this point, you are consuming the "logger" package but it's pointing to GitHub and your package doesn't live there yet. However, you can repoint to a local address on your machine, let's do that next.
 
 1. Open *go.mod* and add the following:
 
@@ -159,7 +155,7 @@ To publish your package, you can put it on GitHub.
    git init
    ```
 
-1. Create the repo at GitHub.
+1. Create the repo on GitHub.
 
 1. Make you do at least one commit:
 
@@ -168,7 +164,7 @@ To publish your package, you can put it on GitHub.
     git commit -m "first commit"
     ```
 
-1. Do the following do upload your package to GitHub:
+1. Do the following to upload your package to GitHub:
 
    ```bash
    git remote add origin https://github.com/softchris/logger.git
@@ -232,8 +228,4 @@ To publish your package, you can put it on GitHub.
 
 ## Challenge
 
-TODO
-
-##  Post-Lecture Quiz
-
-TODO
+See if you can add a feature to your new package. Give it a new tag via Git. Then ensure your app is using this new version.

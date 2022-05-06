@@ -1,10 +1,6 @@
-# Go from the beginning - working with loops
+# Working with loops
 
-This article covers working with loops in Go
-
-##  Pre-Lecture Quiz
-
-TODO
+This chapter covers working with loops in Go. Loops are used to repeat statements in your code.
 
 ## Introduction
 
@@ -13,13 +9,13 @@ This chapter will cover:
 - Loop statements with `for`.
 - Device conditions on when to break a loop.
 - Apply `range` to iterate over an array.
-- Control the loop with `continue` and `break`. 
+- Control the loop with `continue` and `break`.
 
 ## The case for looping statements
 
-You are likely to want repeat a set of instructions. For example, you might have a list of orders where you need to process each order. Or you have a file that you need to read it line by line or there might be some other calculation. Regardless of your situation, you are likely to need a looping construct, so what are your options in Go?
+You are likely to want to repeat a set of instructions. For example, you might have a list of orders where you need to process each order. Or you have a file that you need to read line by line or there might be some other calculation. Regardless of your situation, you are likely to need a looping construct, so what are your options in Go?
 
-Basically, you are using the `for` loop. There are three major ways yu can use it:
+You are using the `for` loop. There are three major ways you can use it:
 
 - **increment steps**. With the help of a variable, you define a start point, a condition when to stop and an incrementation step. This is your "classic" for-loop. Here's what it looks like:
 
@@ -29,7 +25,7 @@ Basically, you are using the `for` loop. There are three major ways yu can use i
    } 
    ```
 
-- while. In many programming languages you a have a `while` keyword. Go doesn't have that, but what you can do is to use the for-loop in a similar way. You omit the initialization step and increment step and get this code:
+- **while**. In many programming languages you have a `while` keyword. Go doesn't have that, but what you can do is use the for-loop similarly. You omit the initialization step and increment step and get this code:
 
   ```go
   for <condition> {
@@ -37,7 +33,7 @@ Basically, you are using the `for` loop. There are three major ways yu can use i
   }
   ```
 
-- for each. lastly, you have the `for-each` like construct that operates on an array like sequence. It uses the `range` keyword to function:
+- **for each**. lastly, you have the `for-each` like construct that operates on an array-like sequence. It uses the `range` keyword to function:
 
    ```go
    for i,s := range array {
@@ -49,35 +45,35 @@ Basically, you are using the `for` loop. There are three major ways yu can use i
 
 The conventional for-loop has three different parts:
 
-- initialization, here you want to create a variable and assign it a starter value like so:
+- **initialization**, here you want to create a variable and assign it a starter value like so:
 
    ```go
    for i:= 0;
    ```
 
-   Note the use of `;`, you usually don's use semicolon, but for this construct, you need it.
+   Note the use of `;`, you usually don's use semicolons, but for this construct, you need it.
 
-- condition. The next step is evaluating whether you should continue incrementing or not. You define a boolean expression here, that if `true`, continues to loop:
+- **condition**. The next step is evaluating whether you should continue incrementing or not. You define a Boolean expression here, that if `true`, continues to loop:
 
    ```go
    for i := 0; i< 10     
    ```
 
-   `i < 10`, as long as a value is between 0 and 10 (becomes 10, then loop breaks), then it returns true and the loop continues.
+   `i < 10`, as long as a value is between 0 and 10 (becomes 10, then loop breaks), then it returns true, and the loop continues.
 
-- increment, in this step, the loop variable `i` is updated, updating it by 1 is common but you can add any increment size, negative or positive.
+- **increment**, in this step, the loop variable `i` is updated, updating it by 1 is common but you can add any increment size, negative or positive.
 
    ```go
    for i := 0; i< 10; i++ {
 
    }
-   ``` 
+   ```
 
    Here, `i` is updated by 1. This loop will run ten times.
 
-## Repeat until condition is met with `while`
+## Repeat until the condition is met with `while`
 
-A simplified version of this loop can omit the initialization and increment step. You are then left with the condition step only. This step tests whether a variable is true or false and the loop exits on false. Here's an example:
+A simplified version of this loop can omit the initialization and increment steps. You are then left with the condition step only. This step tests whether a variable is `true` or `false` and the loop exits on false. Here's an example:
 
 ```go
 i := 1
@@ -93,15 +89,15 @@ Here's another code, using the same idea, but this time we ask for input from th
 
 ```go
 var keepGoing = true
- answer := ""
- for keepGoing {
+answer := ""
+for keepGoing {
   fmt.Println("Type command: ")
   fmt.Scan(&answer)
   if answer == "quit" {
-   keepGoing = false
+    keepGoing = false
   }
- }
- fmt.Println("program exit")
+}
+fmt.Println("program exit")
 ```
 
 An example run of the program could look like so:
@@ -113,9 +109,9 @@ Type command: quit
 program exit
 ```
 
-## Using `for each` over a range
+## Using for-each over a range
 
-For this next loop construct, the idea is to operate over an array or some kind of known sequence. For each iteration you are able to get the index as as well as the next item in the loop. Here's some example code:
+For this next loop construct, the idea is to operate over an array or known sequence. For each iteration you can get the index as well as the next item in the loop. Here's some example code:
 
 ```go
 arr := []string{"arg1", "arg2", "arg3"}
@@ -124,7 +120,7 @@ arr := []string{"arg1", "arg2", "arg3"}
  }
 ```
 
-`arr` is defined as an array and then the `range` construct is used to loop over the array. For each iteration, the current index is being assigned to `i` and the array item is assigned to `s`. An output of the above code will look like so:
+`arr` is defined as an array and then the `range` construct is used to loop over the array. For each iteration, the current index is assigned to `i` and the array item is assigned to `s`. An output of the above code will look like so:
 
 ```output
 index: 0, item: arg1
@@ -218,7 +214,7 @@ When creating console apps, you often want to read user input. The user input co
    Type command: command
    Type command: quit
    program exit 
-   ``` 
+   ```
 
 ## 🚀 Challenge
 
@@ -246,7 +242,3 @@ func main() {
    fmt.Println("program exit")
 }
 ```
-
-## Post-Lecture Quiz
-
-TODO

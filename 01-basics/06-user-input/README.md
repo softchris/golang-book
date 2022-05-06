@@ -1,10 +1,6 @@
-# Go from the beginning - reading user input
+# Reading user input
 
 You will learn how to read user input, both a simpler technique and a more advanced one using formatters.
-
-##  Pre-Lecture Quiz
-
-TODO
 
 ## Introduction
 
@@ -17,7 +13,7 @@ This chapter will cover:
 
 ## User input
 
-It's an important thing to be able to read user input from the console. It gives the user a chance to interact with the program. Things to consider is how you are asking the user to input, is it one word, several inputs. Will the user separate input by space or newline? Regardless of what approach you go with, try to communicate the chosen approach to the user.
+It's an important thing to be able to read user input from the console. It gives the user a chance to interact with the program. Things to consider are how you are asking the user to input, is it one word, several inputs. Will the user separate input by space or newline? Regardless of what approach you go with, try to communicate the chosen approach to the user.
 
 ## Managing user input with `fmt`
 
@@ -65,9 +61,9 @@ fmt.Scan(&a1, &a2)
 str := fmt.Sprintf("a1: %s a2: %s", a1, a2)
 ```
 
-Note how `a1` and `a2` is sent into `Scan()` and they are comma separated. So how will those code run?
+Note how `a1` and `a2` is sent into `Scan()` and they are comma-separated. So how will those codes run?
 
-When you run this code, there's two ways for the user to input. The user can either separate the values by space like so:
+When you run this code, there are two ways for the user to input. The user can either separate the values by space like so:
 
 ```output
 hi you
@@ -84,9 +80,9 @@ a1: hi a2: you
 
 ## `Scanf()`, scan the input with formatters
 
-So far, you've seen how you can collect input with spaces and endlines as separators. You can also be very specific in how you collect input. Imagine that the user wants to type in an invoice number like so "INV200" or "INV114" and what you are interested in is the number part, or maybe you are interested in the prefix as well?
+So far, you've seen how you can collect input with spaces and endlines as separators. You can also be specific in how you collect input. Imagine that the user wants to type in an invoice number like so "INV200" or "INV114" and what you are interested in is the number part, or you are interested in the prefix as well?
 
-The answer to solving this is in the `Scanf()` function. It takes formatters. With formatters, you're able to pick the part of the user input you are interested in, and place that into the variable you want.
+The answer to solving this is in the `Scanf()` function. It takes formatters. With formatters, you're able to pick the part of the user input you are interested in and place that into the variable you want.
 
 In the above-mentioned case, you can construct code looking like so:
 
@@ -98,7 +94,7 @@ fmt.Scanf("%3s%d", &prefix, &no)
 fmt.Printf("prefix: %s, invoice no: %d", prefix, no)
 ```
 
-The interesting part lies in the first argument of `Scanf()`, namely `3s%d`. What the means is, take the first 3 characters, `%3s` and interpret as a string. Then interpret and place the remaining as a number, `%d`.
+The interesting part lies in the first argument of `Scanf()`, namely `3s%d`. What this means is, take the first 3 characters, `%3s` and interpret them as a string. Then interpret and place the remaining as a number, `%d`.
 
 Running this program, you will get an output like so:
 
@@ -109,13 +105,13 @@ prefix: inv, invoice no: 200
 
 "inv" is placed in `prefix` and 200 in `no` variable.
 
-##  Learn more
+## Learn more
 
-To learn more about this are, check out this link <https://pkg.go.dev/fmt#Scanf>
+To learn more about this area, check out this link <https://pkg.go.dev/fmt#Scanf>
 
 ## Assignment - read user input
 
-In this assignment you will read user input for a card game. The objective is tto capture the names of the players.
+In this assignment, you will read user input for a card game. The objective is to capture the names of the players.
 
 1. Create a file *main.go* with the following content:
 
@@ -150,11 +146,11 @@ In this assignment you will read user input for a card game. The objective is tt
    Enter player names (separated by space or newline):
    Alice Bob
    Players are:  Alice Bob
-   ``` 
+   ```
 
 ## 🚀 Challenge
 
-Try modifying the program so it takes a number of players first and then ensure all players gets a name. Here's an example output of such a program:
+Try modifying the program so it takes several players first and then ensures all players get a name. Here's an example output of such a program:
 
 ```output
 Enter number of players: 
@@ -182,7 +178,3 @@ func main() {
  fmt.Println("Players are: ", player1, player2)
 }
 ```
-
-##  Post-Lecture Quiz
-
-TODO

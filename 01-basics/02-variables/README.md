@@ -1,9 +1,6 @@
-# Go from the beginning - using variables
+# Using variables
+
 With variables, we can remember values and later refer to them via named references. using variables will make our code easier to read.
-
-##  Pre-Lecture Quiz
-
-TODO
 
 ## Introduction
 
@@ -23,7 +20,7 @@ In Go, there are many ways to declare variables:
     var firstName string
     ```
 
-- **Define a group** of variables. It's possible to define a grorup of variables. Using this way of declaring means you only type the `var` keyword once. The group is defined by the use of parenthesis `()`:
+- **Define a group** of variables. It's possible to define a group of variables. Using this way of declaring means you only type the `var` keyword once. The group is defined using parenthesis `()`:
 
    ```golang
    var (
@@ -34,7 +31,7 @@ In Go, there are many ways to declare variables:
 
     Note how each variable is on a new row.
 
-- **Define and assign a value**. Within functions, you can use the `:=` operator, it declares and assigns at the same time. Below code shows the creation of the `firstName` variable. The data type is inferred to be a string:
+- **Define and assign a value**. Within functions, you can use the `:=` operator, it declares and assigns at the same time. The below code shows the creation of the `firstName` variable. The data type is inferred to be a string:
 
    ```go
    firstName := "Chris"
@@ -52,12 +49,12 @@ firstName = "Mike"
 
 There are many data types you can use with Go. They are divided into different categories:
 
-- **Basic types**. In this category, we find types like integers, floats (numbers with decimals) and other types like booleans (for true/false), strings (for text) and more.
-- **Composite types**. We will talk about composite types in a separate article, but they are more complex and examples of composite types are arrays, structs and interfaces.
+- **Basic types**. In this category, we find types like integers, floats (numbers with decimals) and other types like Booleans (for true/false), strings (for text) and more.
+- **Composite types**. We will talk about composite types in a separate article, but they are more complex, and examples of composite types are arrays, structs and interfaces.
 
 ### Declare a variable with a type
 
-There's two ways you can declare a variable and give it a type:
+There are two ways you can declare a variable and give it a type:
 
 - **explicitly**, by specifying its type, for example:
 
@@ -65,7 +62,7 @@ There's two ways you can declare a variable and give it a type:
    var name string
    ```
 
-- **implicitly**, by assigning it a value and have it be inferred:
+- **implicitly**, by assigning it a value and having it been inferred:
 
    ```go
    name := "chris"
@@ -75,9 +72,9 @@ There's two ways you can declare a variable and give it a type:
 
 ## String interpolation
 
-Sometimes, you want to be able to write things to the screen and mix different data types doing so. For example, you might want to write, "Customer: Adam has 20$ on his bank account".
+Sometimes, you want to be able to write things to the screen and mix different data types doing so. For example, you might want to write, "Customer: Adam has 20$ in his bank account".
 
-Lets say then that this information is represented by the these two variables:
+Let's say then that this information is represented by these two variables:
 
 ```go
 var (
@@ -94,15 +91,11 @@ Here's how you can print the example string from before:
 fmt.Printf("Customer %s has %d$ on their bank account", customerName, accountBalance)
 ```
 
-Above, the `%s` represents a string and `%d` represents a number. By using these formatters as placeholders, the variables are correctly implemented and the output becomes:
+Above, the `%s` represents a string and `%d` represents a number. By using these formatters as placeholders, the variables are correctly implemented, and the output becomes:
 
 ```output
 Customer Adam has 20$ on their bank account
 ```
-
-## Summary
-
-In this exercise, you've learned how to declare your first variables. You've also learned that there's different types for different types of data. Finally you've learned too interpolate variables of different types and have that be printed to the screen.
 
 ## Assignment - define some variables and print them out
 
@@ -135,9 +128,9 @@ Create a file *main.go* and give it the following content:
    - `replay`, a boolean stating whether to start a new game session when the old one has ended.
    - `namePlayerOne`, a string representing the name of the first player.
 
-   All of these variables helps describe important information in a Texas Holdem game.
+   All of these variables help describe essential information in a Texas Holdem game.
 
-   Next, lets run our app to make sure it works.
+   Next, let's run our app to make sure it works.
 
 1. Add the following code to the `main()` function to print out the variables:
 
@@ -165,11 +158,7 @@ Create a file *main.go* and give it the following content:
 
 ## 🚀 Challenge
 
-See if you can come up with more variables to represent state in a Texas Holdem card game, like for example, other players, the card deck etc. What data type would you give those variables?
-
-## Post-Lecture Quiz
-
-TODO Post-lecture quiz
+See if you can come up with more variables to represent the state in a Texas Holdem card game, like for example, other players, the card deck etc. What data type would you give those variables?
 
 ## Review & Self Study
 
