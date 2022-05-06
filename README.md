@@ -5,7 +5,7 @@ Welcome to Go from the beginning, a free book containing 19 lessons that will ta
 | Chapter | Title | Section | What you will learn |  Lesson  
 |--|--|--|--|--|
 | 01 | Hello world | Basics | Why use Go and how to write your first program | [Lesson](/01-basics/01-hello/README.md) |
-| 02 | Using variables | Basics | How to declare variables with different data types and how to initialize and assign values | [Lesson](/01-basics/01-variables/README.md)  |
+| 02 | Using variables | Basics | How to declare variables with different data types and how to initialize and assign values | [Lesson](/01-basics/02-variables/README.md)  |
 | 03 | Boolean logic with If and Else | Basics | How to work with boolean variables and create different execution paths with If, Else and Else If | [Lesson](/01-basics/03-if-and-else/README.md)  |
 | 04 | Converting between strings and numbers | Basics | How to use the `strconv` library to convert between primitives and strings. | [Lesson](/01-basics/04-conversions/README.md)  | 
 | 05 | Loop statements | Basics |  How to repeat statements and iterating over list structures and ways to control the loops | [Lesson](/01-basics/05-loops/README.md)  |
