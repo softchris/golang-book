@@ -184,7 +184,7 @@ In this assignment, you are creating a program that tests out various Boolean lo
 1. Run the command `go run main.go`, to run the program
 
    ```bash
-   goo run main.go
+   go run main.go
    ```
 
    You should see the following output:

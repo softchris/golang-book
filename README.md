@@ -1,4 +1,6 @@
-Welcome to Go from the beginning, a free book containing 19 lessons that will take you from zero to hero in the amazing language Go.
+# Go from the beginning
+
+Welcome to Go from the beginning, a free book containing 25+ lessons that will take you from "zero to hero" in the amazing language Go.
 
 ## Table of content
 
@@ -32,4 +34,24 @@ Welcome to Go from the beginning, a free book containing 19 lessons that will ta
 
 ## How to use this content
 
-Every chapter consist of a lesson and an exercise. You are encouraged to run the code in the exercise, modify it and understand how it works
+Every chapter consist of a lesson and an exercise. You are encouraged to run the code in the exercise, modify it and understand how it works.
+
+## Contributions
+
+Contributions are very welcome. Please raise an issue of you see something or a PR.
+
+I welcome contributions on:
+
+- Suggestions on topics to cover
+- Correctness issues
+- Spelling
+- Suggestions on better formatting
+- I hope I hear from you. :)
+
+## Read offline/PDF/EPUB
+
+> <https://leanpub.com/go-from-the-beginning> FREE on LeanPub
+
+## Donate
+
+Please consider donating to the people of Ukraine.
