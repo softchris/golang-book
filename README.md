@@ -4,7 +4,7 @@ Welcome to Go from the beginning, a free book containing 25+ lessons that will t
 
 ## Read online
 
-<https://softchris.github.io/golang-book/>
+> <https://softchris.github.io/golang-book/>
 
 ## Read offline/PDF/EPUB
 
@@ -30,19 +30,19 @@ Please consider donating to the people of Ukraine.
 | 10 | Structs | Composite data types | Structs enables us to collect many fields in one grouping, learn how to create and modify structs | [Lesson](/02-data-types/02-structs/README.md)  |
 | 11 | Maps | Composite data types | Maps make it easy to lookup items if you know the key. Maps have the notion of keys and values. | [Lesson](/02-data-types/03-maps/README.md)  | 
 | 12 | Interfaces | Composite data types | Learn how you can model your data as interfaces and how to implement them | [Lesson](/02-data-types/04-interfaces/README.md)  |
-| 13 | Projects | Create your first project | Learn how to create your first project | [Lesson](/03-projects/01-first-project/README.md)  |
-| 14 | Projects | Consume external packages | Learn how to use external packages | [Lesson](/03-projects/02-consume-external/README.md)  |
-| 15 | Projects | Create shared module | Create a module you can share with others | [Lesson](/03-projects/03-create-shared-module/README.md)  |
-| 16 | Projects | Testing | Learn to test your code | [Lesson](/03-projeccts/04-testing/README.md)  |  
-| 17 | Web Dev | JSON | Learn to work with the JSON format | [Lesson](/04-webdev/01-json/README.md)  | 
-| 18 | Web Dev | Build a Web App | Learn how to build a web app capabable of serving many different formats | [Lesson](/04-webdev/02-web-dev/README.md)  | 
-| 19 | Miscellaneous | Logs | Use logging for better management of all kinds of messages in your app | [Lesson](/05-misc/01-logs/README.md)  |
-| 20 | Miscellaneous | Strings | Work with the string library | [Lesson](/05-misc/02-strings/README.md)  |
-| 21 | Miscellaneous | Regex | Work with regular epressions | [Lesson](/05-misc/03-regex/README.md)  |
-| 22 | Miscellaneous | Goroutines | Work with goroutines and channels | [Lesson](/05-misc/04-goroutines/README.md)  |
-| 23 | Miscellaneous | Database with Sqlite | Work with databases | [Lesson](/05-misc/05-sqlite/README.md)  |
-| 24 | IO | Read and write to files | Learn to read from and write to files | [Lesson](/06-io/01-read-write-files/README.md)  |
-| 25 | IO | Files and directories | Learn to perform operations on files and directories | [Lesson](/06-io/02-read-write-files/README.md)  |
+| 13 | Create your first project  | Projects  | Learn how to create your first project | [Lesson](/03-projects/01-first-project/README.md)  |
+| 14 | Consume external packages | Projects  | Learn how to use external packages | [Lesson](/03-projects/02-consume-external/README.md)  |
+| 15 | Create shared module | Projects | Create a module you can share with others | [Lesson](/03-projects/03-create-shared-module/README.md)  |
+| 16 | Testing | Testing | Learn to test your code | [Lesson](/03-projects/04-testing/README.md)  |  
+| 17 | JSON | Web Dev | Learn to work with the JSON format | [Lesson](/04-webdev/01-json/README.md)  |
+| 18 | Build a Web App | Web Dev | Learn how to build a web app capable of serving many different formats | [Lesson](/04-webdev/02-web-dev/README.md)  |
+| 19 | Logs | Miscellaneous  | Use logging for better management of all kinds of messages in your app | [Lesson](/05-misc/01-logs/README.md)  |
+| 20 | Strings | Miscellaneous | Work with the string library | [Lesson](/05-misc/02-strings/README.md)  |
+| 21 | Regex | Miscellaneous | Work with regular epressions | [Lesson](/05-misc/03-regex/README.md)  |
+| 22 | Goroutines  | Miscellaneous | Work with goroutines and channels | [Lesson](/05-misc/04-goroutines/README.md)  |
+| 23 | Database with Sqlite  | Miscellaneous | Work with databases | [Lesson](/05-misc/05-sqlite/README.md)  |
+| 24 | Read and write to files | IO | Learn to read from and write to files | [Lesson](/06-io/01-read-write-files/README.md)  |
+| 25 | Files and directories  | IO | Learn to perform operations on files and directories | [Lesson](/06-io/02-read-write-files/README.md)  |
 
 ## How to use this content
 
