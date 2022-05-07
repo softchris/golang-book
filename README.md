@@ -2,6 +2,18 @@
 
 Welcome to Go from the beginning, a free book containing 25+ lessons that will take you from "zero to hero" in the amazing language Go.
 
+## Read online
+
+<https://softchris.github.io/golang-book/>
+
+## Read offline/PDF/EPUB
+
+> <https://leanpub.com/go-from-the-beginning> FREE on LeanPub
+
+## Donate
+
+Please consider donating to the people of Ukraine.
+
 ## Table of content
 
 | Chapter | Title | Section | What you will learn |  Lesson  
@@ -48,10 +60,4 @@ I welcome contributions on:
 - Suggestions on better formatting
 - I hope I hear from you. :)
 
-## Read offline/PDF/EPUB
 
-> <https://leanpub.com/go-from-the-beginning> FREE on LeanPub
-
-## Donate
-
-Please consider donating to the people of Ukraine.
