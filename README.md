@@ -14,6 +14,11 @@ Welcome to Go from the beginning, a free book containing 25+ lessons that will t
 
 Please consider donating to the people of Ukraine.
 
+- **Back and Alive** (they are buying what the army requests and do public reports)
+<https://comebackalive.in.ua>
+- **NBU** (National Bank of Ukraine) accounts for the army support <https://t.co/MauRvgu89E>
+- **UNICEF**, <https://www.unicef.org/emergencies/war-ukraine-pose-immediate-threat-children>
+
 ## Table of content
 
 | Chapter | Title | Section | What you will learn |  Lesson  
