@@ -91,7 +91,7 @@ Next, lets create some code that will use the external library:
 
     ```go
     func main() {
-      sum += math.Add(1,2)
+      sum := math.Add(1,2)
       fmt.Println(sum)
     }
     ```
@@ -166,7 +166,7 @@ import (
 )
 
 func main() {
-  sum += math.Add(1,2)
+  sum := math.Add(1,2)
   fmt.Println(sum)
 }
 ```
