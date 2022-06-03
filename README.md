@@ -32,7 +32,7 @@ Please consider donating to the people of Ukraine.
 | 07 | Functions | Basics | Reuse your code by creating functions. Learn how to deal with parameters and how to deal with returns and return types | [Lesson](/01-basics/07-functions/README.md)  |
 | 08 | Error handling | Basics | How manage errors in your code. This will teach both how to produce errors as well as deal with them | [Lesson](/01-basics/08-error-handling/README.md)  |
 | 09 | Arrays | Composite data types | Here we will learn about arrays, how to construct them, access items and iterate over them | [Lesson](/02-data-types/01-arrays/README.md)  | 
-| 10 | Structs | Composite data types | Structs enables us to collect many fields in one grouping, learn how to create and modify structs | [Lesson](/02-data-types/02-structs/README.md)  |
+| 10 | Structs | Composite data types | Structs enables us to collect many fields in one grouping, learn how to create and modify structs | [Lesson](/02-data-types/02-structs%20/README.md)  |
 | 11 | Maps | Composite data types | Maps make it easy to lookup items if you know the key. Maps have the notion of keys and values. | [Lesson](/02-data-types/03-maps/README.md)  | 
 | 12 | Interfaces | Composite data types | Learn how you can model your data as interfaces and how to implement them | [Lesson](/02-data-types/04-interfaces/README.md)  |
 | 13 | Create your first project  | Projects  | Learn how to create your first project | [Lesson](/03-projects/01-first-project/README.md)  |
@@ -47,7 +47,7 @@ Please consider donating to the people of Ukraine.
 | 22 | Goroutines  | Miscellaneous | Work with goroutines and channels | [Lesson](/05-misc/04-goroutines/README.md)  |
 | 23 | Database with Sqlite  | Miscellaneous | Work with databases | [Lesson](/05-misc/05-sqlite/README.md)  |
 | 24 | Read and write to files | IO | Learn to read from and write to files | [Lesson](/06-io/01-read-write-files/README.md)  |
-| 25 | Files and directories  | IO | Learn to perform operations on files and directories | [Lesson](/06-io/02-read-write-files/README.md)  |
+| 25 | Files and directories  | IO | Learn to perform operations on files and directories | [Lesson](/06-io/02-file-directories/README.md)  |
 
 ## How to use this content
 
