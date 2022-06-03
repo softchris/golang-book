@@ -2,7 +2,8 @@
 
 This lesson covers some history of Go and also teaches you how to build your first Go app.
 
-[![your first Go program](https://img.youtube.com/vi/Sb98X2HhHpQ/0.jpg)](https://www.youtube.com/watch?v=Sb98X2HhHpQ)
+> Watch the video
+> [![your first Go program](https://img.youtube.com/vi/Sb98X2HhHpQ/0.jpg)](https://www.youtube.com/watch?v=Sb98X2HhHpQ)
 
 ## Introduction
 
