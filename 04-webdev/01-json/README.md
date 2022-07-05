@@ -127,12 +127,12 @@ imports (
 func main() {
   str := `{ "name": "my product", "id": 1 }`
   product := Product{}
-  json.Unmarshal([]byte(str), &person)
-  fmt.Println(person) // prints the object
+  json.Unmarshal([]byte(str), &product)
+  fmt.Println(product) // prints the object
 }
 ```
 
-Note how we also convert the response to a byte array `[]byte(str)` and how the data is written in the second parameter to the `person` instance as a reference, `&person`.
+Note how we also convert the response to a byte array `[]byte(str)` and how the data is written in the second parameter to the `product` instance as a reference, `&product`.
 
 **read from a file**
 
@@ -223,15 +223,15 @@ Given the following file *response.json*, find a way to read the data and displa
     "items": [
       { "id": 1, "quantity": 3, "total": 34.3 },
      { "id": 2, "quantity": 2, "total": 17.8 }
-    ] 
+    ]
    },
    {
-    "id": 2, 
+    "id": 2,
     "items": [
       { "id": 3, "quantity": 3, "total": 10.0 },
       { "id": 4, "quantity": 2, "total": 100.5 }
-    ] 
-   } 
+    ]
+   }
   ]
 }
 ```
