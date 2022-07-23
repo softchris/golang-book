@@ -100,7 +100,7 @@ In this assignment, you will create a project.
 1. Create a project like so:
 
     ```go
-    go mod init
+    go mod init my-project
     ```
 
 1. create the **helper** directory and *helper.go* file and give it the following content:
@@ -123,7 +123,7 @@ In this assignment, you will create a project.
    package main
 
    import (
-     "log-tester/helper"
+     "my-project/helper"
    )
     
    func main() {
@@ -131,7 +131,7 @@ In this assignment, you will create a project.
    }
    ```
 
-   Note this import `"log-tester/helper"`, it ensures the `helper` package is in scope.
+   Note this import `"my-project/helper"`, it ensures the `helper` package is in scope.
 
 1. Compile and run
 

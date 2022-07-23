@@ -50,7 +50,7 @@ dictionaryEnSv["hello"] = "hej"
 
 ## Read a value by key
 
-Imagine now that we have these two entries, and you want the value given that you have then entry 555404, how would we do that? We use the square brackets like so `[]`:
+Imagine now that we have these two entries, and you want the value given that you have in entry 555404, how would we do that? We use the square brackets like so `[]`:
 
 ```go
 phonebook[555404] // "Sheriff of Nottingham"
@@ -58,7 +58,7 @@ phonebook[555404] // "Sheriff of Nottingham"
 
 ### Check for existing entry
 
-So, you learned that `phonebook[555404]` gives you a value back. What if it doesn't exist? What happens if you give it a key that's not stored in the map is that you get nothing back as a result:
+So, you learned that `phonebook[555404]` gives you a value back. What if it doesn't exist? If you give it a key that's not stored in the map then you get nothing back as a result:
 
 ```go
 phonebook[888] // this prints as empty in the console
@@ -67,7 +67,7 @@ phonebook[888] // this prints as empty in the console
 There's a better way to check this because accessing an entry with a key returns two values, the value, and a Boolean. The Boolean indicates if this key exists in the map. See this code:
 
 ```go
-_, exist phonebook[888]
+_, exist := phonebook[888]
 fmt.Println(exist) // false
 ```
 

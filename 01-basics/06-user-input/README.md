@@ -89,7 +89,7 @@ In the above-mentioned case, you can construct code looking like so:
 ```go
 var prefix string
 var no int
-// in110
+// inv110
 fmt.Scanf("%3s%d", &prefix, &no)
 fmt.Printf("prefix: %s, invoice no: %d", prefix, no)
 ```

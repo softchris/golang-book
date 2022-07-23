@@ -33,7 +33,7 @@ func Divide(nominator int, divider int) float32 {
 }
 ```
 
-It has an `if` check. If `Divider()` is `0` then it calls `panic()`. So what happens then? You see something like:
+It has an `if` check. If `divider` is `0` then it calls `panic()`. So what happens then? You see something like:
 
 ```output
 panic: can't divide by 0
@@ -277,7 +277,7 @@ func errorHandler() {
 }
    
 func Divide(nominator int, divider int) float32 {
-  // defer errorHandler()
+  defer errorHandler()
   if divider == 0 {
     panic("can't divide by 0")
   }
