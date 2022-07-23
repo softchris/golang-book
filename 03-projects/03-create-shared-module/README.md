@@ -194,7 +194,8 @@ To publish your package, you can put it on GitHub.
 1. Open up *go.mod* and remove these lines:
 
    ```go
-   require github.com/softchris/logger v0.1.0
+   require github.com/softchris/logger v0.0.0
+
    replace github.com/softchris/logger => ../logger
    ```
 

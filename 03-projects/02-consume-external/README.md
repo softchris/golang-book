@@ -87,7 +87,7 @@ Next, lets create some code that will use the external library:
     )
     ```
 
-1. To the same file, add `main()` function and use external function, from package:
+1. To the same file, add a `main()` function and call the external `Add` method from the `math` package:
 
     ```go
     func main() {

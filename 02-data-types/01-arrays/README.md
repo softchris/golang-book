@@ -122,6 +122,7 @@ letters := []string{"A", "B", "C", "D", "E"}
 remove := 2 // remove index
 // 0 - remove index, remove +1 to end   
 letters = append(letters[:remove], letters[remove+1:]...)
+// [A B D E]
 ```
 
 ### Create a slice with `make()`
