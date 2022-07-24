@@ -81,19 +81,19 @@ So that means, we need to add the following annotations to our above created str
 
 ```go
 type Product struct {
-  Id int `json: "id"`
-  Name string `json: "name"`
+  Id int `json:"id"`
+  Name string `json:"name"`
 }
 
 type Response struct {
-  Products []Product `json: "products"`
+  Products []Product `json:"products"`
 }
 ```
 
 What these annotations do is to say, in the JSON data, look for properties with these names and map them to the following property. Like in this example from above:
 
 ```go
-Id int `json: "id"`
+Id int `json:"id"`
 ```
 
 ### Reading the data
@@ -151,12 +151,12 @@ import (
 )
 
 type Products struct {
- Products []Product `json: products`
+ Products []Product `json:"products"`
 }
 
 type Product struct {
- Id   int    `json: "id"`
- Name string `json: "name"`
+ Id   int    `json:"id"`
+ Name string `json:"name"`
 }
 
 func main(){
@@ -193,8 +193,8 @@ import (
 )
 
 type Person struct {
-  Id int `json: "id"`
-  Name string`json: "name"`
+  Id int `json:"id"`
+  Name string`json:"name"`
 }
 
 func main() {
@@ -248,18 +248,18 @@ import (
 )
 
 type OrderItem struct {
- Id       int     `json: "id"`
- Quantity int     `json: "quantity"`
- Total    float32 `json: "total"`
+ Id       int     `json:"id"`
+ Quantity int     `json:"quantity"`
+ Total    float32 `json:"total"`
 }
 
 type Order struct {
- Id    int         `json: "id"`
- Items []OrderItem `json: items`
+ Id    int         `json:"id"`
+ Items []OrderItem `json:"items"`
 }
 
 type Response struct {
- Orders []Order `json: orders`
+ Orders []Order `json:"orders"`
 }
 
 func main() {
