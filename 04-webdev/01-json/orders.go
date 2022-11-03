@@ -7,18 +7,18 @@ import (
 )
 
 type OrderItem struct {
-	Id       int     `json: "id"`
-	Quantity int     `json: "quantity"`
-	Total    float32 `json: "total"`
+	Id       int     `json:"id"`
+	Quantity int     `json:"quantity"`
+	Total    float32 `json:"total"`
 }
 
 type Order struct {
-	Id    int         `json: "id"`
-	Items []OrderItem `json: items`
+	Id    int         `json:"id"`
+	Items []OrderItem `json:"items"`
 }
 
 type Response struct {
-	Orders []Order `json: orders`
+	Orders []Order `json:"orders"`
 }
 
 func main() {
