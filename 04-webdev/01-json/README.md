@@ -119,7 +119,7 @@ We will use the `Unmarshal()` function and provide it with the string literal as
 ```go
 package main
 
-imports (
+import (
   "fmt"
   "encoding/json"
 )
