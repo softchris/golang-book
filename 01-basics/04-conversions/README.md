@@ -212,7 +212,7 @@ You might be dealing with the opposite; you have an integer, and you want it to 
 
 ```go
 var noOfPlayers = 8
-str, _ := strconv.Itoa(noOfPlayers)
+str := strconv.Itoa(noOfPlayers)
 
 ```
 
