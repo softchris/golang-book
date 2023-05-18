@@ -27,7 +27,7 @@ You want to split up your app in many different files. Let's say you have the fo
     helper.go 
 ```
 
-What you are saying above is that your program consists of many files and that you want code in the fiile *main.go* to use code from *helper.go* for example.
+What you are saying above is that your program consists of many files and that you want code in the file *main.go* to use code from *helper.go* for example.
 
 To handle such a case, you need the following:
 
