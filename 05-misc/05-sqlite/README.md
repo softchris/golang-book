@@ -143,7 +143,7 @@ To talk to your database via Go, there's some steps you need to take in order:
 
 ## Assignment
 
-In this assignment, we will create a Go program that's able to write and write to the database. We will go all the way from creating the database with the console to writing the Go code needed.
+In this assignment, we will create a Go program that's able to read and write to the database. We will go all the way from creating the database with the console to writing the Go code needed.
 
 ### Create the database and populate it
 
@@ -261,7 +261,7 @@ Next, we will add a function capable of reading data.
    }
    ```
 
-   Not the usage of `Scan()` and variables being sent in as references so the response is written to them.
+   Note the usage of `Scan()` and variables being sent in as references so the response is written to them.
 
 ### Create data
 
