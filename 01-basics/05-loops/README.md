@@ -158,7 +158,7 @@ So far, you've seen three ways you can use the `for` construct. There are also w
    arr = []int{-1,2,-1, 3}
    for i := 0; i< 4; i++ {
      if arr[i] < 0 {
-       break;
+       continue;
      }
      fmt.Println(arr[i])
    } 
